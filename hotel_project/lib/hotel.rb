@@ -10,7 +10,7 @@ class Hotel
   end
 
   def name
-    return @name.split.map { |w| w.capitalize }.join(' ')
+    return @name.split.map(&:capitalize).join(' ')
   end
 
   def rooms
