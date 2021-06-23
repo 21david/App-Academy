@@ -13,6 +13,7 @@ class Battleship
     def start_game
         @board.place_random_ships
         puts "Ships placed: #{@board.size / 4}"
+        puts "remaining misses: #{@remaining_misses}"
         @board.print
     end
 
@@ -26,7 +27,7 @@ class Battleship
 
     def win?
         if @board.num_ships == 0
-            puts 'you win!'
+            puts 'you win!!!!'
             return true
         end
         false
