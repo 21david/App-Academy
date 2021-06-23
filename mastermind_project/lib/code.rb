@@ -44,7 +44,7 @@ class Code
 
   def num_exact_matches(code_obj)
     match = 0
-    code_obj.pegs.each_with_index do |peg, i|
+    code_obj.pegs.each_index do |i|
       match += 1 if code_obj.pegs[i] == @pegs[i]
     end
     match
