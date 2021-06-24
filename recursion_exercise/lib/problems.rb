@@ -55,7 +55,14 @@ end
 # sum_array([5])            # => 5
 # sum_array([5, 2])         # => 7
 # sum_array([4, 10, -1, 2]) # => 15
-def sum_array(array, sum=0, i=array.length-1)
+def sum_array(array)
+    return 0 if array.empty? 
+    
+    array[0] + sum_array(array[1..-1])
+end
+
+# another way using optional parameters
+def sum_array_2(array, sum=0, i=array.length-1)
     return sum if i == -1
         
     sum_array(array, sum + array[i], i-1)
@@ -73,7 +80,13 @@ end
 # reverse_string("c")           # => "c"
 # reverse_string("internet")    # => "tenretni"
 # reverse_string("friends")     # => "sdneirf"
-def reverse_string(str, new_str="", i=str.length-1)
+def reverse_string(str)
+    return "" if str == ""
+
+    reverse_string(str[1..-1]) + str[0]
+end
+
+def reverse_string_2(str, new_str="", i=str.length-1)
     return new_str if i == -1
 
     reverse_string(str, new_str + str[i], i-1)
@@ -122,5 +135,6 @@ def flatten(data, flattened=[])
         flattened << data
     end
 end
-array_1 = [1, 2, [[3, 4], [5, [6]]], [7, 8]]
-p flatten(array_1)
+
+# array_1 = [1, 2, [[3, 4], [5, [6]]], [7, 8]]
+# p flatten(array_1)
