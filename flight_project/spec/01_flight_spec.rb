@@ -30,7 +30,7 @@ describe "Flight" do
     it "should accept a flight number (string) and capacity (number) as an arg" do
       expect { flight }.to_not raise_error
     end
-
+    
     it "should set @flight_number and @capacity with the given args" do
       expect(flight.instance_variable_get(:@flight_number)).to eq("AA128")
       expect(flight.instance_variable_get(:@capacity)).to eq(4)
