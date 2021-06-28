@@ -19,6 +19,9 @@ class List
         @items.length
     end
 
+    def toggle_item(index)
+        @items[index].toggle
+    end
 
     def add_item(title, deadline, desc="")
         begin
@@ -30,6 +33,22 @@ class List
 
         @items << item
         true
+    end
+
+    def remove_item(index)
+        return false if !valid_index?(index)
+        @items.delete_at(index)
+        true
+    end
+
+    def purge
+        # iterating backwards to prevent it from skipping
+        # indices whenever an element is deleted
+        i = @items.length-1
+        while i >= 0
+            remove_item(i) if @items[i].status  # if task is done, remove it
+            i -= 1
+        end
     end
 
     def valid_index?(index)
@@ -69,12 +88,13 @@ class List
         puts 
 
         puts '-' * width
-        puts "Index | Item#{' ' * (width - 26)}| Deadline" # (width - 25) spaces total in between
+        puts "Index | Item#{' ' * (width - 37)}| Deadline   | Status" # (width - 15) spaces total in between
         puts '-' * width
         # print items in list
         
         @items.each_with_index do |item, i|
-            print "#{i.to_s.ljust(6)}| #{item.title.ljust(width - 22)}| #{item.deadline}\n"
+            completed = item.status ? "✅" : ""
+            print "#{i.to_s.ljust(6)}| #{item.title.ljust(width - 33)}| #{item.deadline} | #{completed}\n"
         end
 
         puts '-' * width
@@ -83,8 +103,10 @@ class List
     def print_full_item(index)
         return if !valid_index?(index)
         puts '------------------------------------------'
-        print @items[index].title.ljust(32)
-        puts @items[index].deadline
+        print @items[index].title.ljust(27)
+        print @items[index].deadline
+        status = @items[index].status ? "✅" : "✖"
+        puts "   #{status}"
         if @items[index].description.length > 0
             puts @items[index].description
         else

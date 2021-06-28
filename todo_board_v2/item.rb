@@ -10,6 +10,8 @@ class Item
         end
 
         @description = desc
+
+        @done = false
     end
 
     def title
@@ -40,7 +42,19 @@ class Item
         @description = new_description
     end
 
-    # date should be a string in format "YYYY-MM-DD"
+    def status
+        @done
+    end
+
+    def toggle
+        if self.status
+            @done = false
+        else
+            @done = true
+        end
+    end
+
+    # date should be a string in exact format "YYYY-MM-DD"
     def self.valid_date?(date)
         return false if date.length != 10 || date[4] != '-' || date[7] != '-'
 
