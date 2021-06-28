@@ -57,18 +57,19 @@ class Array
   end
 
   def my_zip(*arrays)
-    max = self.length
+    arrays.unshift(self)
     new_arr = []
-    arrays.each { |array| max = array.length if array.length > max }
-    (0...max - 1).each do |i|
-      cur_arr = (0...arrays.length).map do |array|
+
+    (0...self.length).each do |i|
+
+      cur_arr = arrays.map do |array|
         array[i]
       end
-      new_arr << cur_arr.shift(self[i])
+
+      new_arr << cur_arr
     end
 
     new_arr
-
   end
 
 end
