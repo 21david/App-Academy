@@ -1,3 +1,5 @@
+require "byebug"
+
 class Array
 
   def my_each(&prc)
@@ -43,21 +45,44 @@ class Array
     true
   end
 
-  def my_flatten
-    return [self] if !self.kind_of?(Array)
-
-    new_arr = []
+  def my_flatten(array = [])
     self.each do |element|
       if element.kind_of?(Array)
-        element.my_flatten
+        element.my_flatten(array)
       else
-        new_arr << element
+        array << element
       end
     end
+    array
+  end
+
+  def my_zip(*arrays)
+    max = self.length
+    new_arr = []
+    arrays.each { |array| max = array.length if array.length > max }
+    (0...max - 1).each do |i|
+      cur_arr = (0...arrays.length).map do |array|
+        array[i]
+      end
+      new_arr << cur_arr.shift(self[i])
+    end
+
+    new_arr
+
   end
 
 end
 
+
+a = [ 4, 5, 6 ]
+b = [ 7, 8, 9 ]
+p [1, 2, 3].my_zip(a, b) # => [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+p a.my_zip([1,2], [8])   # => [[4, 1, 8], [5, 2, nil], [6, nil, nil]]
+p [1, 2].my_zip(a, b)    # => [[1, 4, 7], [2, 5, 8]]
+
+c = [10, 11, 12]
+d = [13, 14, 15]
+p [1, 2].my_zip(a, b, c, d)    # => [[1, 4, 7, 10, 13], [2, 5, 8, 11, 14]]
 
 # return_value = [1, 2, 3].my_each do |num|
 #   puts num
@@ -87,4 +112,6 @@ end
 # p a.my_all? { |num| num > 1 } # => false
 # p a.my_all? { |num| num < 4 } # => true
 
-p [1, 2, 3, [4, [5, 6]], [[[7]], 8]].my_flatten # => [1, 2, 3, 4, 5, 6, 7, 8]
+# p [1, 2, 3, [4, [5, 6]], [[[7]], 8]].my_flatten # => [1, 2, 3, 4, 5, 6, 7, 8]
+
+
