@@ -40,7 +40,7 @@ class Board
     end 
 
     def [](position)
-        r,c = position 
+        r, c = position 
         @grid[r][c]
     end 
 
@@ -49,17 +49,20 @@ class Board
         @grid[r][c] = value
     end 
 
-    def render(pos)
+    def render
         print "  "
         (0...@grid.length).each {|i| print "#{i} "}
         puts 
 
         @grid.each_with_index do |row, r|
             print "#{r} "
-            print "#{@grid[pos]}" if @grid[pos].is_face_up
-            
+
             row.each_with_index do |card, idx|
-                print "#{card.value} "
+                if card.is_face_up
+                    print "#{card.value} "
+                else  
+                    print "  "
+                end 
             end
             puts
         end
@@ -68,7 +71,7 @@ class Board
     end 
 
     def won?
-        @grid.any? { |row| row.any? {|card| card.is_face_up} }
+        @grid.all? { |row| row.all? {|card| card.is_face_up} }
     end 
 
     def reveal(guessed_pos)

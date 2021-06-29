@@ -10,20 +10,26 @@ class Game
     end
 
     def play
+        @board.render
         while !@board.won?
             print "Enter a guess: "
             response = gets.chomp.split(' ')
             guess1 = response.map { |coordinate| coordinate.to_i }
+
+            if @board[guess1].is_face_up
+                
+            
             @board.reveal(guess1)
-            @board.render(guess1)
+            @board.render
             print "Enter a second guess: "
             response2 = gets.chomp.split(' ')
-            guess2 = response.map { |coordinate| coordinate.to_i }
+            guess2 = response2.map { |coordinate| coordinate.to_i }
             @board.reveal(guess2)
-            @board.render(guess2)
+            @board.render
             self.make_guess(guess1, guess2)
         end
 
+        puts "Congrats! You won!"
     end
 
     def make_guess(guess1, guess2)
@@ -32,7 +38,7 @@ class Game
         is_match = card1.value == card2.value
 
         if is_match
-            print "Congrats! You found a match"
+            puts "Congrats! You found a match"
             return 
         else  
             card1.hide 
@@ -41,3 +47,4 @@ class Game
     end
 
 end
+
