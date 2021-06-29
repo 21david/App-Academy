@@ -2,7 +2,9 @@ require_relative 'card'
 
 class Board
     def initialize(n)
+        raise "Error: number should be even" if !n.even?
         @grid = Array.new(n) { Array.new(n, '_') }
+
     end
 
     def populate
@@ -62,9 +64,16 @@ class Board
     end 
 
     def won?
-        @grid.any? { |row| row.include?('_') }
+        return false if @grid.any? { |row| row.any? {|card| card == "_"} }
+        @grid.any? { |row| row.any? {|card| !card.is_face_up} }
     end 
 
+    def reveal(guessed_pos)
+        card = self.[](guessed_pos) 
 
+        card.reveal if !card.is_face_up
+        
+        card.value 
+    end 
 
 end
