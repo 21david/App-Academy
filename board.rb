@@ -4,7 +4,7 @@ class Board
     def initialize(n)
         raise "Error: number should be even" if !n.even?
         @grid = Array.new(n) { Array.new(n, '_') }
-        populate
+        self.populate
     end
 
     def populate
@@ -49,13 +49,15 @@ class Board
         @grid[r][c] = value
     end 
 
-    def render
+    def render(pos)
         print "  "
         (0...@grid.length).each {|i| print "#{i} "}
         puts 
 
         @grid.each_with_index do |row, r|
             print "#{r} "
+            print "#{@grid[pos]}" if @grid[pos].is_face_up
+            
             row.each_with_index do |card, idx|
                 print "#{card.value} "
             end
@@ -66,8 +68,7 @@ class Board
     end 
 
     def won?
-        return false if @grid.any? { |row| row.any? {|card| card == "_"} }
-        @grid.any? { |row| row.any? {|card| !card.is_face_up} }
+        @grid.any? { |row| row.any? {|card| card.is_face_up} }
     end 
 
     def reveal(guessed_pos)

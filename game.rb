@@ -15,12 +15,12 @@ class Game
             response = gets.chomp.split(' ')
             guess1 = response.map { |coordinate| coordinate.to_i }
             @board.reveal(guess1)
-            @board.render
+            @board.render(guess1)
             print "Enter a second guess: "
             response2 = gets.chomp.split(' ')
             guess2 = response.map { |coordinate| coordinate.to_i }
             @board.reveal(guess2)
-            @board.render
+            @board.render(guess2)
             self.make_guess(guess1, guess2)
         end
 
