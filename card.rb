@@ -15,7 +15,7 @@ class Card
     end 
 
     def ==(other_card)
-        return false if !other_card.is_a(Card)
+        return false if !other_card.is_a?(Card)
         self.value == other_card.value
     end 
 

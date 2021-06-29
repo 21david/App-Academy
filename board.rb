@@ -20,7 +20,7 @@ class Board
         end 
 
         card_values.each do |letter|
-            while @grid.flatten.count(letter) < 2
+            while @grid.flatten.count(Card.new(letter)) < 2
                 position = get_random_position
                 if self.[](position) == '_'
                     self.[]=(position, Card.new(letter))
@@ -54,12 +54,15 @@ class Board
 
         @grid.each_with_index do |row, r|
             print "#{r} "
-           puts @grid[r].join(" ")
+            row.each_with_index do |card, idx|
+                print "#{card.value} "
+            end
+            puts
         end
     end 
 
     def won?
-        @grid
+        @grid.any? { |row| row.include?('_') }
     end 
 
 
