@@ -2,7 +2,7 @@ require_relative 'card'
 
 class Board
     def initialize(n)
-        @grid = Array.new(n) { Array.new(n, ' ') }
+        @grid = Array.new(n) { Array.new(n, '_') }
     end
 
     def populate
@@ -20,13 +20,15 @@ class Board
         end 
 
         card_values.each do |letter|
-            position = get_random_position
-            while @grid[position] == " "
-                
+            while @grid.flatten.count(letter) < 2
+                position = get_random_position
+                if self.[](position) == '_'
+                    self.[]=(position, letter)
+                end
+            end
+        end
 
-        end 
-
-
+        @grid
     end
 
     def get_random_position
@@ -34,7 +36,6 @@ class Board
         rand_col = rand(0...@grid.length)
         position = [rand_row, rand_col]
     end 
-
 
     def [](position)
         r,c = position 
@@ -46,4 +47,9 @@ class Board
         @grid[r][c] = value
     end 
 
+    def render
+        @grid.each do |row|
+            puts row.join(' ')
+        end
+    end
 end
