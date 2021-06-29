@@ -72,8 +72,10 @@ class List
         @items[0]
     end
 
-    def p
+    def print_all
+        # width determines the width of the output (# of characters it takes up horizontally)
         width = 60  # recommended minimum of ~50
+
         puts '-' * width
         # length is 70 
         # 70 - length of string = spaces to the left and right (combined)
