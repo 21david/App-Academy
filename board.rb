@@ -4,7 +4,7 @@ class Board
     def initialize(n)
         raise "Error: number should be even" if !n.even?
         @grid = Array.new(n) { Array.new(n, '_') }
-
+        populate
     end
 
     def populate
