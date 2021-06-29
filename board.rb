@@ -61,6 +61,8 @@ class Board
             end
             puts
         end
+
+        nil
     end 
 
     def won?
