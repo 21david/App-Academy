@@ -16,14 +16,14 @@ class Board
                 letter = alphabet.sample
             end 
     
-            card_values << letter  #card_values works, it returns 8 random pairs
+            card_values << letter  
         end 
 
         card_values.each do |letter|
             while @grid.flatten.count(letter) < 2
                 position = get_random_position
                 if self.[](position) == '_'
-                    self.[]=(position, letter)
+                    self.[]=(position, Card.new(letter))
                 end
             end
         end
@@ -48,8 +48,20 @@ class Board
     end 
 
     def render
-        @grid.each do |row|
-            puts row.join(' ')
+        print "  "
+        (0...@grid.length).each {|i| print "#{i} "}
+        puts 
+
+        @grid.each_with_index do |row, r|
+            print "#{r} "
+           puts @grid[r].join(" ")
         end
-    end
+    end 
+
+    def won?
+        @grid
+    end 
+
+
+
 end
