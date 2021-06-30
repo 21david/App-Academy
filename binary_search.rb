@@ -6,7 +6,7 @@ def bsearch(arr, target)
 
     mid_position = arr.length / 2
     if arr[mid_position] == target
-        return mid_position
+        return true
     elsif arr[mid_position] < target
         a = bsearch(arr[mid_position+1..-1],target)
         side = true
@@ -14,11 +14,15 @@ def bsearch(arr, target)
         b = bsearch(arr[0...mid_position],target) #([1],1) b= true after being recursively called
         side = false
     end
-    idx = 0
-    if side
-        idx += arr.length/2
+    # idx = 0
+    # if side
+    #     idx += arr.length/2
+    # end
+    # idx
+    if a == true || b == true
+        return arr.index(target)
     end
-    idx
 end
 p bsearch([1, 2, 3], 1) # =>0
 p bsearch([2, 3, 4, 5], 3) # => 1
+p bsearch([2, 4, 6, 8, 10], 6) # => 2
