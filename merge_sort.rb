@@ -1,11 +1,11 @@
-def merge_sort(arr) #([38,27,43])
+def merge_sort(arr) #([38,27])
     if arr.length == 1 || arr.length == 0
         return arr
     end
 
     mid_pos = arr.length/2
-    left = merge_sort(arr[0..mid_pos])
-    right = merge_sort(arr[mid_pos+1..-1])
+    left = merge_sort(arr[0...mid_pos])
+    right = merge_sort(arr[mid_pos..-1])
     merge(left,right) #output some sorted array
 end
 
@@ -34,4 +34,5 @@ def merge(arr1,arr2)
     new_arr
 end
 
-p merge_sort([38,27,43,3,9,82,10])
+# p merge_sort([3,3])
+p merge_sort([38,27,43, 3,3,9,82,10,3,9,82,10,-5])
