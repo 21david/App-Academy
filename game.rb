@@ -16,7 +16,7 @@ class Game
             response = gets.chomp.split(' ')
             guess1 = response.map { |coordinate| coordinate.to_i }
 
-            if @board[guess1].is_face_up
+            # if @board[guess1].is_face_up
                 
             
             @board.reveal(guess1)
@@ -48,3 +48,5 @@ class Game
 
 end
 
+g = Game.new(8)
+g.play
