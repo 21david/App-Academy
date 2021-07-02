@@ -7,25 +7,25 @@ class PolyTreeNode
     end
 
     def parent=(parent_node)
-        if !parent_node == parent
-            parent = nil if parent != nil
+        if parent_node != parent
+            # parent = nil if parent != nil
+            # parent.remove_child(self)
             parent = parent_node
-            parent_node.children << self
+            parent_node.children << self if !parent_node.children.include?(self)
         end
     end
 
     def add_child(child)
         # if child.parent != self
         child.parent = self
-        children << child
+        children << child if !children.include?(child)
         # end
     end
 
     def remove_child(child)
         raise if !children.include?(child)
-        idx = children.index(child)
         child.parent = nil
-        children.delete_at(idx)
+        children.delete(child)
     end
 
     
