@@ -28,5 +28,34 @@ class PolyTreeNode
         children.delete(child)
     end
 
+
+
+    # def bfs(value)
+    #     tree1 = PolyTreeNode.new 
+    #     while 
+    #         curr_node = tree1.parent
+    #         return curr_node if curr_node == value
+    #         curr_node.children.each do |child|
+    #             tree1 << child
+    #         end
+    #     end
+    #     return nil
+    # end
+
+
+
+    def dfs(value)
+        stack_1 = Array.new 
+        stack_1 << self       
+        while stack_1.length > 0
+            curr_node = stack_1.pop
+            return curr_node if curr_node == value
+            curr_node.children.each do |child|
+                stack_1 << child
+            end
+        end
+        return nil
+    end
+
     
 end
