@@ -1,5 +1,6 @@
+require 'byebug'
 class PolyTreeNode
-    attr_reader :value, :parent, :children
+    attr_accessor :value, :parent, :children
     def initialize(value, parent=nil, children=[])
         @value = value
         @parent = parent
@@ -7,11 +8,23 @@ class PolyTreeNode
     end
 
     def parent=(parent_node)
-        if parent_node != parent
-            # parent = nil if parent != nil
+        return if self.parent == parent_node
+        # debugger
+        # if parent_node != parent && parent_node != nil
+        if self.parent != nil
+            # debugger
+            # if parent == nil
+            
             # parent.remove_child(self)
-            parent = parent_node
-            parent_node.children << self if !parent_node.children.include?(self)
+            # if self already has a parent, remove self from parent
+            self.parent.children.delete(self) if !self.parent.children.include?(self)
+            # parent = nil if parent != nil
+            # children.delete(child)
+            
+        end
+        @parent = parent_node
+        if parent_node != nil
+            self.parent.children << self if !parent.children.include?(self)
         end
     end
 
@@ -30,19 +43,19 @@ class PolyTreeNode
 
 
 
-    # def bfs(value)
-    #     tree1 = PolyTreeNode.new 
-    #     while 
-    #         curr_node = tree1.parent
-    #         return curr_node if curr_node == value
-    #         curr_node.children.each do |child|
-    #             tree1 << child
-    #         end
-    #     end
-    #     return nil
-    # end
+    def bfs(value)
+        tree1 = [self] 
 
-
+        while !tree1.empty?
+            # debugger
+            curr_node = tree1.shift
+            return curr_node if curr_node.value == value
+            curr_node.children.each do |child|
+                tree1 << child
+            end
+        end
+        return nil
+    end
 
     def dfs(value)
         stack_1 = Array.new 
