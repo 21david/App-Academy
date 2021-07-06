@@ -1,3 +1,6 @@
+
+require 'byebug'
+
 module Slideable
 
     HORIZONTAL_DIRS = [[0,1], [0,-1], [1,0], [-1,0]]
@@ -24,7 +27,7 @@ module Slideable
                     new_pos = grow_unblocked_moves_in_dir(dir[0], dir[1], possible_moves[-1])
                     
                 end
-                if @board[new_pos] != nil && self.color != @board[new_pos].color
+                if (new_pos[0] < 8 && new_pos[1] < 8 && new_pos[0] >= 0 && new_pos[1] >= 0) && @board[new_pos] != nil && self.color != @board[new_pos].color
                     possible_moves << new_pos
                 end
             end
@@ -38,7 +41,7 @@ module Slideable
                     new_pos = grow_unblocked_moves_in_dir(dir[0], dir[1], possible_moves[-1])
                     
                 end
-                if @board[new_pos] != nil && self.color != @board[new_pos].color
+                if (new_pos[0] < 8 && new_pos[1] < 8 && new_pos[0] >= 0 && new_pos[1] >= 0) && @board[new_pos] != nil && self.color != @board[new_pos].color
                     possible_moves << new_pos
                 end
             end

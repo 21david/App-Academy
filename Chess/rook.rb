@@ -2,6 +2,7 @@ require_relative 'slideable.rb'
 require_relative 'piece.rb'
 require_relative 'board.rb'
 
+require 'byebug'
 
 class Rook < Piece
 
@@ -19,5 +20,8 @@ class Rook < Piece
 
 end
 
-rook = Rook.new(:black, Board.new, [0,0])
+# debugger
+board = Board.new
+rook = Rook.new(:black, board, [4,4])
+board[[4,4]] = rook
 p rook.moves
