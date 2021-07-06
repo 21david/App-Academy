@@ -12,6 +12,27 @@ module Slideable
     def moves
         possible_moves = []
         dirs = move_dirs
+        # make a copy of the position
+        # repeatedly call grow_unblocked_moves_in_dir on that position
+        pos_copy = @pos.dup
+
+        if dirs.include?(:horizontal)
+            HORIZONTAL_DIRS.each do |dir|
+                new_pos = grow_unblocked_moves_in_dir(dir[0], dir[1])
+                while (new_pos[0] < 8 && new_pos[1] < 8 && new_pos[0] >= 0 && new_pos[1] >= 0) && @board[new_pos].nil?
+                    possible_moves << new_pos
+                    new_pos = grow_unblocked_moves_in_dir(dir[0], dir[1])
+                    
+                end
+                if @board[new_pos] != nil && self.color != @board[new_pos].color
+                    possible_moves << new_pos
+                end
+            end
+        end
+
+        if dirs.include?(:diagonal)
+
+        end
     end
 
     def move_dirs
