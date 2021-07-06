@@ -1,10 +1,11 @@
 require_relative 'piece.rb'
 
 class Board
+
     def initialize
-        black = Array.new(2) { Array.new(8) { Piece.new } }
+        black = Array.new(2) { Array.new(8) { :black } }
         null = Array.new(4) { Array.new(8) {nil} }
-        white = Array.new(2) { Array.new(8) { Piece.new } }
+        white = Array.new(2) { Array.new(8) { :white } }
         @rows = black + null + white
     end
 
