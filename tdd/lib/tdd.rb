@@ -54,3 +54,25 @@ def stock_picker(arr)
 end
 
 
+class TowersOfHanoi
+    attr_reader :pegs
+
+    def initialize
+        @pegs = [ [3, 2, 1], [], [] ]
+    end
+
+    def move
+        while !TowersOfHanoi.won?(pegs)
+            puts "Enter peg number to take from"
+            input = gets.chomp.to_i
+            puts "Enter peg number to add to"
+            input_2 = gets.chomp.to_i
+            raise "Please try again" if pegs[input].empty?
+        end
+    end
+
+    def self.won?(array)
+        array == [ [], [3, 2, 1], [] ] || array == [ [], [], [3, 2, 1]]
+    end
+
+end

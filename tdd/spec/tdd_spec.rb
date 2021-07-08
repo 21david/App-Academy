@@ -96,7 +96,7 @@ describe TowersOfHanoi do
             expect(TowersOfHanoi.won?(array_1)).to eq(true)
         end
 
-        it 'return false it !won?' do
+        it 'return false if !won?' do
             array_1 = [ [], [2], [3, 1]]
             array_2 = [ [2], [1], [3]]
             expect(TowersOfHanoi.won?(array_1)).to eq(false)
