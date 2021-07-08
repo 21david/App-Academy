@@ -71,4 +71,9 @@ describe '#stock_picker' do
 end
 
 describe TowersOfHanoi do
-    describe
+    subject(:towers_of_hanoi) { TowersOfHanoi.new }
+    let(:initialize) { double(["A","D","B"]) }
+    describe '#initialize' do
+        it ''
+    end
+end
