@@ -52,3 +52,23 @@ describe '#my_transpose' do
         expect(my_transpose([])).to eq([])
     end
 end
+
+describe '#stock_picker' do
+    it 'should take an array of stock prices and output the most profitable pair of days on which to buy and sell a stock' do
+        array = [2, 5, 8, 1, 0, 6]
+        expect(stock_picker(array)).to eq([0,2])
+        array_2 = [3, 5, 8, 9, 1, 99]
+        expect(stock_picker(array_2)).to eq([4,5])
+    end
+
+    it 'should return nil if array length is less than 2' do
+        array_3 = [1]
+        arr = []
+        expect(stock_picker(array_3)).to eq(nil)
+        expect(stock_picker(arr)).to eq(nil)
+    end
+
+end
+
+describe TowersOfHanoi do
+    describe
