@@ -30,3 +30,25 @@ describe Array do
         end
     end
 end
+
+describe '#my_transpose' do
+    matrix = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8]
+    ]
+
+    it 'rows should equal columns' do
+        expect(my_transpose(matrix)[0]).to eq([0,3,6])
+        expect(my_transpose(matrix)[1]).to eq([1,4,7])
+        expect(my_transpose(matrix)[2]).to eq([2,5,8])
+    end
+
+    it 'should not mutate the matrix' do
+        expect(my_transpose(matrix)).to_not be(matrix)
+    end
+
+    it 'returns empty array if an empty array is passed through' do
+        expect(my_transpose([])).to eq([])
+    end
+end

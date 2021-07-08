@@ -8,20 +8,14 @@ def my_uniq(arr)
     uniques
 end
 
+def my_transpose(matrix)
 
-class Array
-
-    def two_sum
-        new_arr= []
-
-        self.each_with_index do |ele, idx|
-            self.each_with_index do |ele2, idx2|
-                if ele + ele2 == 0 && idx < idx2
-                    new_arr << [idx, idx2]
-                end
-            end
+    matrix.map.with_index do |row, i|
+        arr = []
+        matrix.each do |cur_row|
+            arr << cur_row[i]
         end
-        new_arr
+        arr
     end
 
 end
