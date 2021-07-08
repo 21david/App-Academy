@@ -52,3 +52,5 @@ def stock_picker(arr)
 
     low_and_high_days
 end
+
+

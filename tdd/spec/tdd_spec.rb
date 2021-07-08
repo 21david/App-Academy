@@ -72,8 +72,36 @@ end
 
 describe TowersOfHanoi do
     subject(:towers_of_hanoi) { TowersOfHanoi.new }
-    let(:initialize) { double(["A","D","B"]) }
+
     describe '#initialize' do
-        it ''
+        it 'initialize an array with two empty arrays and one array with all the disc sizes in order' do
+            array = [ [3, 2, 1], [], [] ]
+            expect(subject.array).to eq(array)
+        end
+
+    end
+
+    describe '#move' do 
+        it 'get to integers as input from the user' do
+            array = [ [3, 2, 1], [], [] ]
+            expect(towers_of_hanoi.move).to eq([ [3, 2], [1], [] ])
+        end
+    end
+
+    describe '::won?' do
+        it 'return true if won' do
+            array = [ [], [3, 2, 1], [] ]
+            array_1 = [ [], [], [3, 2, 1]]
+            expect(TowersOfHanoi.won?(array)).to eq(true)
+            expect(TowersOfHanoi.won?(array_1)).to eq(true)
+        end
+
+        it 'return false it !won?' do
+            array_1 = [ [], [2], [3, 1]]
+            array_2 = [ [2], [1], [3]]
+            expect(TowersOfHanoi.won?(array_1)).to eq(false)
+            expect(TowersOfHanoi.won?(array_2)).to eq(false)
+        end
+
     end
 end
