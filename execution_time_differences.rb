@@ -50,13 +50,20 @@ def largest_contiguous_subsum(list)     #O(n^3)
 end
 
 list = [2, 3, -6, 7, -6, 7]
+
 p largest_contiguous_subsum(list) # => 8 (from [7, -6, 7])
 
 
 def largest_contiguous_subsum_2(list)
-    largest = 0
-    current_sum = 0
+    largest = list.first
+    current_sum = list.first
 
-    ()
+    (1...list.length).each do |i|
+        if current_sum + list[i] > list[i]
+            largest = current_sum + list[i] 
+            current_sum += list[i]
+        else
+            largest = list[i]
+    end
 
 end
