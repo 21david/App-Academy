@@ -68,3 +68,9 @@ def clever_octopus
 
     max
 end
+
+
+# for constant dance!, 
+# you would use a hash map that maps direction to index for O(1) access time
+# this is because hash functions are being used in the background, which take a 
+# constant number of steps to perform
