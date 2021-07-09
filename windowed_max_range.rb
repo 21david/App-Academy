@@ -80,7 +80,30 @@ def MyStack
 
 end
 
+class StackQueue
 
+    def initialize
+        @front = MyStack.new
+        @back = MyStack.new
+    end
+
+    def enqueue
+        
+    end
+
+    def dequeue
+
+    end
+
+    def size
+
+    end
+
+    def empty?
+
+    end
+
+end
 
 
 
