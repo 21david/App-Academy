@@ -31,13 +31,32 @@ list = [ 0, 3, 5, 4, -5, 10, 1, 90 ]
 p my_min_2(list)  # =>  -5
 
 
-def largest_contiguous_subsum(list)
+def largest_contiguous_subsum(list)     #O(n^3)
     sub_arr = []
 
-    list.each_with_index do |ele1, i1|
-        list.each_with_index do |ele2, i2|
-            sub_arr << 
+    list.each_index do |i1|     # O(n^3)
+        (i1...list.length).each do |i2|
+            sub_arr << list[i1..i2]
         end
     end
+
+    max = sub_arr.first.sum  
+    (1...sub_arr.length).each do |i|    # O(n^2)
+        max = sub_arr[i].sum if sub_arr[i].sum > max
+    end
+
+    max
+
+end
+
+list = [2, 3, -6, 7, -6, 7]
+p largest_contiguous_subsum(list) # => 8 (from [7, -6, 7])
+
+
+def largest_contiguous_subsum_2(list)
+    largest = 0
+    current_sum = 0
+
+    ()
 
 end
