@@ -38,6 +38,7 @@ class LinkedList
   end
 
   def last
+    @tail.prev
   end
 
   def empty?
@@ -53,6 +54,7 @@ class LinkedList
   def append(key, val)
     new_node = Node.new(key, val)
     @tail.prev.next = new_node
+    new_node.prev = @tail.prev
     new_node.next = @tail
     @tail.prev = new_node
   end
@@ -64,6 +66,7 @@ class LinkedList
   end
 
   def each
+    temp = @head
   end
 
   # uncomment when you have `each` working and `Enumerable` included
