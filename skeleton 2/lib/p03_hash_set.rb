@@ -15,8 +15,10 @@ class HashSet
   end
 
   def remove(n)
+    if @store[n.hash % @store.length].include?(n)
       @count -= 1
       @store[n.hash % @store.length].delete(n)
+    end
   end
 
   def include?(n)
@@ -37,8 +39,6 @@ class HashSet
       @store = new_store
   end
 
-  private
-
   def [](num)
     # optional but useful; return the bucket corresponding to `num`
   end
@@ -47,6 +47,4 @@ class HashSet
     @store.length
   end
 
-  def resize!
-  end
 end
