@@ -81,12 +81,49 @@ end
 class Array
 
     def hash
-        val = 0
-        
-        val.hash
+        arr = []
+        self.each_with_index do |el, i|
+            arr << el * i 
+        end
+        total = arr.sum 
+        total.hash
     end
 
     # [1, 2, 3].hash == [1, 2, 3].hash # => true
     # [1, 2, 3].hash == [3, 2, 1].hash # => false
 
+end
+
+class String
+    def hash 
+        arr = []
+        self.each_char.with_index do |char, i|
+            arr << char.ord * i 
+        end
+        total = arr.sum
+        total.hash
+    end
+end
+
+class Hash
+    def hash
+        arr1 = self.select { |key, value| key.is_a?(Integer) }
+        arr2 = self.select { |key, value| key.is_a?(String) }
+        sorted1 = arr1.sort 
+        sorted2 = arr2.sort
+        combined = sorted1 + sorted2
+        total = 0
+        combined.each do |sub|
+            sum = 0
+            sub.each do |ele|
+                if ele.is_a?(String)
+                    sum += ele.hash
+                else
+                    sum += ele
+                end
+            end
+            total += sum
+        end
+        total.hash
+    end
 end
