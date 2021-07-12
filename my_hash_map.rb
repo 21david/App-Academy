@@ -83,7 +83,11 @@ class Array
     def hash
         arr = []
         self.each_with_index do |el, i|
-            arr << el * i 
+            if el.is_a?(String)
+                arr << el.hash
+            else
+                arr << el * i 
+            end
         end
         total = arr.sum 
         total.hash
@@ -115,11 +119,11 @@ class Hash
         total = 0
         combined.each do |sub|
             sum = 0
-            sub.each do |ele|
-                if ele.is_a?(String)
-                    sum += ele.hash
+            sub.each_with_index do |ele, i|
+                if ele.is_a?(Integer)
+                    sum += ele * i
                 else
-                    sum += ele
+                    sum += ele.hash * i
                 end
             end
             total += sum
