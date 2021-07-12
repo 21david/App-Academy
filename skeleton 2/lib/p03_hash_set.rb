@@ -7,35 +7,35 @@ class HashSet
   end
 
   def insert(n)
-        if !@store[n.hash % @store.length].include?(n)
-            @size += 1 
-            resize if @size >= @store.length
-            @store[n.hash % @store.length] << n
-        end
-    end
+      if !@store[n.hash % @store.length].include?(n)
+          @count += 1 
+          resize! if @count >= @store.length
+          @store[n.hash % @store.length] << n
+      end
+  end
 
-    def remove(n)
-        @size -= 1
-        @store[n.hash % @store.length].delete(n)
-    end
+  def remove(n)
+      @count -= 1
+      @store[n.hash % @store.length].delete(n)
+  end
 
-    def include?(n)
-        @store[n.hash % @store.length].include?(n)
-    end
-    
-   
-    private
+  def include?(n)
+      @store[n.hash % @store.length].include?(n)
+  end
+  
+  
+  private
 
-    def resize
-        new_size = @store.length + 10
-        new_store = Array.new(new_size) { Array.new }
-        @store.each do |arr|
-            arr.each do |ele|
-                new_store[ele % new_size] << ele
-            end
-        end
-        @store = new_store
-    end
+  def resize!
+      new_size = @store.length * 2
+      new_store = Array.new(new_size) { Array.new }
+      @store.each do |arr|
+          arr.each do |ele|
+              new_store[ele % new_size] << ele
+          end
+      end
+      @store = new_store
+  end
 
   private
 
