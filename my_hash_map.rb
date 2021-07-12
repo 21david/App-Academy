@@ -62,6 +62,7 @@ class ResizingIntSet
         @store[n % @store.length].include?(n)
     end
     
+   
     private
 
     def resize
@@ -74,4 +75,18 @@ class ResizingIntSet
         end
         @store = new_store
     end
+end
+
+
+class Array
+
+    def hash
+        val = 0
+        
+        val.hash
+    end
+
+    # [1, 2, 3].hash == [1, 2, 3].hash # => true
+    # [1, 2, 3].hash == [3, 2, 1].hash # => false
+
 end
