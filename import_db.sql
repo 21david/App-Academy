@@ -23,15 +23,37 @@ CREATE TABLE questions_follows (
     foreign key(user_id) references users(id)
     foreign key(question_id) references questions(id)
 
-)
+);
 
 CREATE table replies(
-
-    question_id integer not null
-    parent_reply_id integer not null
-    user_id integer not null
+    id integer primary key,
+    question_id integer not null,
+    parent_reply_id integer not null,
+    user_id integer not null,
+    body text not null,
     
+    foreign key (question_id) references questions(id),
+    foreign key (parent_reply_id) references replies(id),
+    foreign key (user_id) references users(id)
+);
 
-)
+CREATE TABLE question_likes (
+    id integer primary key,
+    user_id integer not null,
+    question_id integer not null,
 
+);
+
+
+INSERT INTO 
+    users (fname, lname)
+VALUES
+    ('David', 'Espinosa'),
+    ('Sunny', 'Mei');
+
+
+INSERT INTO
+    questions (title, body, user_id)
+VALUES
+    ('Help with sqlite', 'I need help installing sqlite3', 1);
 
