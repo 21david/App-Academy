@@ -15,9 +15,9 @@ def golden_age
 
   Movie
     .group('yr/10')
-    .select('yr/10 * 10')
     .order('AVG(score) DESC')
     .limit(1)
+    .pluck('yr/10 * 10').first
     
 end
 
@@ -25,7 +25,9 @@ def costars(name)
   # List the names of the actors that the named actor has ever
   # appeared with.
   # Hint: use a subquery
-
+  Actor.joins(:movies).where("actors.name != ? AND movies.id IN (?)", name,
+    Movie.joins(:actors).where("actors.name = ?", name).pluck("movies.id")
+  ).pluck("DISTINCT actors.name")
 end
 
 def actor_out_of_work
