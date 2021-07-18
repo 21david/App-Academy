@@ -12,15 +12,15 @@ class PlayDBConnection < SQLite3::Database
 end
 
 class Play
-  attr_accessor :id, :title, :year, :playwright_id
+  attr_accessor :title, :year, :playwright_id
 
   def self.find_by_title(title)
-    item_from_database = PlayDBConnection.instance.execute(<<-SQL, title)
+    items_from_database = PlayDBConnection.instance.execute(<<-SQL, title)
       SELECT *
       FROM plays
       WHERE title = ?
     SQL
-    Play.new(item_from_database)
+    items_from_database.map { |item| Play.new(item) }
   end
 
   # returns all plays written by playwright
@@ -28,7 +28,7 @@ class Play
     items_from_database = PlayDBConnection.instance.execute(<<-SQL, name)
       SELECT *
       FROM plays
-      WHERE id = 
+      WHERE playwright_id = 
         (SELECT id
         FROM playwrights
         WHERE name = ?) -- get playwright's id
@@ -78,16 +78,16 @@ class Playwright
 
   def self.all
     data = PlayDBConnection.instance.execute("SELECT * FROM playwrights") # returns an array of hashes
-    data.map { |datum| Play.new(datum) }
+    data.map { |datum| Playwright.new(datum) }
   end
 
-  def self.find_by_name
+  def self.find_by_name(name)
     item = PlayDBConnection.instance.execute(<<-SQL, name)
       SELECT *
       FROM playwrights
       WHERE name = ?
     SQL
-    Playwright.new(item)
+    Playwright.new(item.first)
   end
 
   def initialize(hash)
@@ -96,17 +96,32 @@ class Playwright
     @birth_year = hash['birth_year']
   end
 
+  # save the instance to the database
   def create
-
+    raise "#{self} already in database" if @id
+    PlayDBConnection.instance.execute(<<-SQL, @name, @birth_year)
+      INSERT INTO playwrights (name, birth_year)
+      VALUES (?, ?)
+    SQL
+    @id = PlayDBConnection.instance.last_insert_row_id
   end
 
   def update
-
+    raise "#{self} not in database" unless @id
+    PlayDBConnection.instance.execute(<<-SQL, @name, @birth_year, @id)
+      UPDATE playwrights
+      SET name = ?, birth_year = ?
+      WHERE id = ?
+    SQL
   end
 
+  # get all plays written by this playwright
   def get_plays
-
+    PlayDBConnection.instance.execute(<<-SQL, @id)
+      SELECT *
+      FROM plays
+      WHERE playwright_id = ?
+    SQL
   end
-
 
 end
