@@ -5,3 +5,16 @@
     font: inherit;
     list-style-type:none;
 }
+
+body {
+    line-height: 1.5;
+
+}
+
+img {
+    width: inherit;
+}
+
+figure {
+    width: 100px;
+}

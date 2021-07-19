@@ -71,3 +71,21 @@ ol li:nth-of-type(2n) {
 h2 + .user_review {
     border-top: 1px solid black;
 }
+
+nav {
+  float: right;
+}
+
+header img {
+  float: left;
+}
+
+#ingredients {
+  clear: left;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
