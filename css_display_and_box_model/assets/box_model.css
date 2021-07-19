@@ -100,7 +100,7 @@ aside{
   display: inline-block;
   width: 180px;
   
-  // margin-right: 15px;
+   /* margin-right: 15px; */
 }
 
 .ingredients-list li, ol li {
@@ -108,6 +108,14 @@ aside{
   margin-bottom: 15px;
 }
 
-input {
+input,label {
   display: block;
+}
+
+select {
+  margin: 20px;
+}
+
+text,select,textarea{
+  width: 200px;
 }
