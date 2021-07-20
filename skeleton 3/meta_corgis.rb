@@ -127,11 +127,18 @@ class MetaCorgiSnacks
     method_name = name.to_s
     get_info_symbol = ("get_" + method_name + "_info").to_sym
     get_tastiness_symbol = ("get_" + method_name + "_tastiness").to_sym
-    define_method(name)
-    define_method(get_info_symbol) { @snack_box.send(get_info_symbol) }
-    define_method(get_tastiness_symbol) { @snack_box.send(get_tastiness_symbol) }
-    
-    # result = "#{name.capitalize}: #{info}: #{tastiness} "
+  
+    define_method(get_info_symbol) {|box_id| @snack_box.send(get_info_symbol, box_id) }
+    define_method(get_tastiness_symbol){|box_id| @snack_box.send(get_tastiness_symbol, box_id) }
+
+    define_method(name) do 
+      get_info_symbol = ("get_" + name.to_s + "_info").to_sym
+      get_tastiness_symbol = ("get_" + name.to_s + "_tastiness").to_sym
+      info = self.send(get_info_symbol,@box_id)
+      tastiness = self.send(get_tastiness_symbol,@box_id)
+      result = "#{name.capitalize}: #{info}: #{tastiness} "
+      tastiness > 30 ? "* #{result}" : result
+    end
 
   end
 end
