@@ -31,7 +31,6 @@ GEM
 
 PLATFORMS
   x86_64-darwin-18
-  x86_64-linux
 
 DEPENDENCIES
   activesupport
@@ -39,4 +38,4 @@ DEPENDENCIES
   sqlite3
 
 BUNDLED WITH
-   2.2.20
+   2.2.19

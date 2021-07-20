@@ -5,18 +5,24 @@ require 'active_support/inflector'
 
 class SQLObject
   def self.columns
-    self.keys
+
   end
 
   def self.finalize!
   end
 
-  def self.table_name=(table_name)
-    # ...
+  @table_name 
+  def self.table_name=(table_name_parameter)
+    @table_name = table_name_parameter
   end
 
   def self.table_name
-    # ...
+    if @table_name == nil
+      self.table_name = self.name.tableize
+    else
+      return self.name.tableize
+    end
+
   end
 
   def self.all
