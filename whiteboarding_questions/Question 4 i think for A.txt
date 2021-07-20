@@ -1,0 +1,20 @@
+```ruby
+# == Schema Information
+#
+# Table name: nobels
+#
+#  yr          :integer
+#  subject     :string
+#  winner      :string
+
+```
+
+1.  In which years was the Physics prize awarded, but no Chemistry prize?
+
+SELECT DISTINCT yr
+FROM nobels
+WHERE subject = 'Physics'
+AND yr IN
+(SELECT yr
+FROM nobels
+WHERE subject != 'Chemistry')
