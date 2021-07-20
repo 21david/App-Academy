@@ -5,7 +5,7 @@ require 'active_support/inflector'
 
 class SQLObject
   def self.columns
-    # ...
+    self.keys
   end
 
   def self.finalize!
