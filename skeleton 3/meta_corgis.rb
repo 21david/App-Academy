@@ -113,9 +113,9 @@ class MetaCorgiSnacks
     method_name = name.to_s
     get_info_symbol = ("get_" + method_name + "_info").to_sym
     get_tastiness_symbol = ("get_" + method_name + "_tastiness").to_sym
-    info = @snack_box.send(get_info_symbol)
-    tastiness = @snack_box.send(get_tastiness_symbol)
-    result = "Treat: #{info}: #{tastiness} "
+    info = @snack_box.send(get_info_symbol, @box_id)
+    tastiness = @snack_box.send(get_tastiness_symbol, @box_id)
+    result = "#{name.capitalize}: #{info}: #{tastiness} "
     tastiness > 30 ? "* #{result}" : result
 
   end
@@ -123,5 +123,15 @@ class MetaCorgiSnacks
 
   def self.define_snack(name)
     # Your code goes here...
+    
+    method_name = name.to_s
+    get_info_symbol = ("get_" + method_name + "_info").to_sym
+    get_tastiness_symbol = ("get_" + method_name + "_tastiness").to_sym
+    define_method(name)
+    define_method(get_info_symbol) { @snack_box.send(get_info_symbol) }
+    define_method(get_tastiness_symbol) { @snack_box.send(get_tastiness_symbol) }
+    
+    # result = "#{name.capitalize}: #{info}: #{tastiness} "
+
   end
 end
