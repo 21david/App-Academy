@@ -17,11 +17,11 @@ class SQLObject
   end
 
   def self.table_name
-    if @table_name == nil
-      self.table_name = self.name.tableize
-    else
+    # if @table_name == nil
+    #   self.table_name = self.name.tableize
+    # else
       return self.name.tableize
-    end
+    # end
 
   end
 
