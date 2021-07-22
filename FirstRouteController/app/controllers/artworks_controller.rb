@@ -1,14 +1,36 @@
 class ArtworksController < ApplicationController
     def index
-        render json: Artwork.all
+        p params
+        if params.has_key?(:user_id)
+            # index of nested resource
+            # @artworks = Artwork.joins(artist_id: params[:user_id])
+            @artworks = Artwork.find_by_sql("
+            SELECT artworks.id, title, image_url, artist_id FROM artworks JOIN artwork_shares ON artwork_id = artworks.id WHERE viewer_id = #{params[:user_id]} UNION SELECT * FROM artworks WHERE artist_id = #{params[:user_id]}")
+            
+
+            # User.joins(:artworks_shared_with_user).where('users.id = ?', params[:artist_id]).group('users.id')
+
+            
+
+            p 'nested'
+            p params
+
+            # combine artworks of user with artworks shared with user
+        else
+            # index of top-level resource
+            p 'not nested'
+            @artworks = Artwork.all
+        end
+
+        render json: @artworks
     end
 
     def show
         @artwork = Artwork.find(params[:id])
-        @artworks_shared = User.find(params[:artist_id]).artworks_shared_with_user
+        # @artworks_shared = User.find(params[:artist_id]).artworks_shared_with_user
         # p params[:id]
 
-        render json: @artwork, @artworks_shared
+        render json: @artwork
         # render json: @artworks_shared
     end
 
