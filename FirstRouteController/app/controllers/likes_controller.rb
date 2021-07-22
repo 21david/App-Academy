@@ -1,21 +1,15 @@
-class UsersController < ApplicationController
+class LikesController < ApllicationController
     def index
-        p params
-        if params.has_key?(:query)
-            render json: User.where("username ILIKE '%#{params[:query]}%' ")
+        if params.has_key?(:user)
+            render json: Like.select("*").where(user_id: params[:id])
         else
-            render json: User.all
+            render json: Like.all
         end
     end
 
-    def show
-        @user = User.find(params[:id])
-        p params[:id]
-        render json: @user
-    end
 
     def create
-        @user = User.new(user_params)
+        @like = User.new(user_params)
         
         if @user.save
             redirect_to user_url(@user)
@@ -45,4 +39,5 @@ class UsersController < ApplicationController
     def user_params
         params.require(:user).permit(:username)
     end
+    
 end

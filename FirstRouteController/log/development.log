@@ -2882,3 +2882,145 @@ ActionView::MissingTemplate (Missing partial users/_user with {:locale=>[:en], :
 ):
   
 app/controllers/users_controller.rb:5:in `index'
+Started GET "/users?query=sam" for ::1 at 2021-07-22 15:32:37 -0400
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/byung/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as */*
+  Parameters: {"query"=>"sam"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "sam"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 10.3ms)
+
+
+  
+ActionView::MissingTemplate (Missing partial users/_user with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/byung/Desktop/AppAcademy/W6D3/FirstRouteController/app/views"
+):
+  
+app/controllers/users_controller.rb:5:in `index'
+Started GET "/users?user[query]=sam" for ::1 at 2021-07-22 15:33:46 -0400
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"query"=>"sam"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users?user[query]=sam" for ::1 at 2021-07-22 15:34:41 -0400
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"query"=>"sam"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+Completed 500 Internal Server Error in 166ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::MissingTemplate (Missing template users/index, application/index with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/byung/Desktop/AppAcademy/W6D3/FirstRouteController/app/views"
+):
+  
+app/controllers/users_controller.rb:5:in `index'
+Started GET "/users?user[query]=sam" for ::1 at 2021-07-22 15:35:09 -0400
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"query"=>"sam"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7
+Completed 200 OK in 29ms (Views: 6.2ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/users?user[query]=sam" for ::1 at 2021-07-22 15:35:50 -0400
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"query"=>"sam"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+Completed 500 Internal Server Error in 189ms (ActiveRecord: 10.1ms)
+
+
+  
+ActionView::MissingTemplate (Missing template users/index, application/index with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/byung/Desktop/AppAcademy/W6D3/FirstRouteController/app/views"
+):
+  
+app/controllers/users_controller.rb:5:in `index'
+Started GET "/users" for ::1 at 2021-07-22 15:38:22 -0400
+Processing by UsersController#index as */*
+  Parameters: {"query"=>"sam"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `has_key?' for nil:NilClass):
+  
+app/controllers/users_controller.rb:4:in `index'
+Started GET "/users?query=sam" for ::1 at 2021-07-22 15:44:33 -0400
+Processing by UsersController#index as */*
+  Parameters: {"query"=>"sam"}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE '%sam%' )[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 500 Internal Server Error in 132ms (ActiveRecord: 22.8ms)
+
+
+  
+ActionView::MissingTemplate (Missing partial users/_user with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/byung/Desktop/AppAcademy/W6D3/FirstRouteController/app/views"
+):
+  
+app/controllers/users_controller.rb:5:in `index'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/users?query=sam" for ::1 at 2021-07-22 15:45:09 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/byung/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as */*
+  Parameters: {"query"=>"sam"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE '%sam%' )[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 500 Internal Server Error in 502ms (ActiveRecord: 43.2ms)
+
+
+  
+ActionView::MissingTemplate (Missing partial users/_user with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/byung/Desktop/AppAcademy/W6D3/FirstRouteController/app/views"
+):
+  
+app/controllers/users_controller.rb:5:in `index'
+Started GET "/users?query=sam" for ::1 at 2021-07-22 15:45:32 -0400
+Processing by UsersController#index as */*
+  Parameters: {"query"=>"sam"}
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE '%sam%' )[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 200 OK in 49ms (Views: 8.4ms | ActiveRecord: 17.3ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4018572678919034250)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateLikes (20210722201108)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (17.0ms)[0m  [1m[35mCREATE TABLE "likes" ("id" bigserial primary key, "user_id" integer NOT NULL, "comment_id" integer, "artwork_id" integer)[0m
+  ↳ db/migrate/20210722201108_create_likes.rb:3
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE  INDEX  "index_likes_on_user_id" ON "likes"  ("user_id")[0m
+  ↳ db/migrate/20210722201108_create_likes.rb:8
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE  INDEX  "index_likes_on_comment_id" ON "likes"  ("comment_id")[0m
+  ↳ db/migrate/20210722201108_create_likes.rb:9
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE  INDEX  "index_likes_on_artwork_id" ON "likes"  ("artwork_id")[0m
+  ↳ db/migrate/20210722201108_create_likes.rb:10
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_likes_on_user_id_and_comment_id" ON "likes"  ("user_id", "comment_id")[0m
+  ↳ db/migrate/20210722201108_create_likes.rb:11
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_likes_on_user_id_and_artwork_id" ON "likes"  ("user_id", "artwork_id")[0m
+  ↳ db/migrate/20210722201108_create_likes.rb:12
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210722201108"]]
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (3.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(4018572678919034250)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
