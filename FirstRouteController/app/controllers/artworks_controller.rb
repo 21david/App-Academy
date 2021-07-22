@@ -56,7 +56,6 @@ class ArtworksController < ApplicationController
 
     def destroy
         @artwork = Artwork.find(params[:id])
-
         @artwork.destroy
         redirect_to artwork_url(@artwork)
     end
