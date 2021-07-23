@@ -263,3 +263,103 @@ Processing by CatsController#new as HTML
 Completed 200 OK in 974ms (Views: 972.9ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/cats/new" for ::1 at 2021-07-23 15:45:14 -0500
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/new.html.erb within layouts/application (363.1ms)
+Completed 500 Internal Server Error in 714ms (ActiveRecord: 4.6ms)
+
+
+
+NoMethodError - undefined method `COLORS' for #<Class:0x00007fe9c80dfbd8>:
+  app/views/cats/new.html.erb:16:in `_app_views_cats_new_html_erb___1238659748837867470_70320979523460'
+  app/controllers/cats_controller.rb:14:in `new'
+
+Started POST "/__better_errors/cbe73796a730c538/variables" for ::1 at 2021-07-23 15:45:15 -0500
+Started GET "/cats/new" for ::1 at 2021-07-23 15:45:51 -0500
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/new.html.erb within layouts/application (150.6ms)
+Completed 500 Internal Server Error in 561ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - uninitialized constant Cat::COLORS:
+  app/views/cats/new.html.erb:16:in `_app_views_cats_new_html_erb___1238659748837867470_70320983421240'
+  app/controllers/cats_controller.rb:14:in `new'
+
+Started POST "/__better_errors/f09499dae7d8717b/variables" for ::1 at 2021-07-23 15:45:53 -0500
+Started GET "/cats/new" for ::1 at 2021-07-23 15:46:20 -0500
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/new.html.erb within layouts/application (304.4ms)
+Completed 500 Internal Server Error in 1541ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - uninitialized constant Cat::COLORS:
+  app/views/cats/new.html.erb:16:in `_app_views_cats_new_html_erb___1238659748837867470_70320981567560'
+  app/controllers/cats_controller.rb:14:in `new'
+
+Started POST "/__better_errors/9adb7ee231379079/variables" for ::1 at 2021-07-23 15:46:24 -0500
+Started GET "/cats/new" for ::1 at 2021-07-23 15:46:26 -0500
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/new.html.erb within layouts/application (263.1ms)
+Completed 500 Internal Server Error in 817ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - uninitialized constant Cat::COLORS:
+  app/views/cats/new.html.erb:16:in `_app_views_cats_new_html_erb___1238659748837867470_47234052097060'
+  app/controllers/cats_controller.rb:14:in `new'
+
+Started POST "/__better_errors/8b47eb9918ba8ba7/variables" for ::1 at 2021-07-23 15:46:28 -0500
+Started GET "/cats/new" for ::1 at 2021-07-23 15:47:28 -0500
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/new.html.erb within layouts/application (171.0ms)
+Completed 500 Internal Server Error in 491ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - uninitialized constant Cat::COLORS:
+  app/views/cats/new.html.erb:16:in `_app_views_cats_new_html_erb___1238659748837867470_70320969303560'
+  app/controllers/cats_controller.rb:14:in `new'
+
+Started POST "/__better_errors/da864d4ac2411ab5/variables" for ::1 at 2021-07-23 15:47:29 -0500
+Started GET "/cats/new" for ::1 at 2021-07-23 15:47:57 -0500
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 830ms (Views: 828.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cats/new" for ::1 at 2021-07-23 15:52:18 -0500
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 935ms (Views: 934.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cats/new" for ::1 at 2021-07-23 15:52:37 -0500
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 1091ms (Views: 1089.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cats/new" for ::1 at 2021-07-23 15:53:09 -0500
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 1145ms (Views: 1144.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cats/new" for ::1 at 2021-07-23 15:54:10 -0500
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 794ms (Views: 793.8ms | ActiveRecord: 0.0ms)
+
+

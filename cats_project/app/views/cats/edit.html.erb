@@ -5,10 +5,10 @@
     <br>
     <br>
         
-        <% if @cat.sex == 'M' %>
+        <%# if @cat.sex == 'M' %>
         <input type="radio" name="sex" value="M">
         <label for="M">M</label>
-        <input type="radio" name="sex" value="F" <% checked %> >
+        <input type="radio" name="sex" value="F" <%= @cat.sex == 'F' ? checked : '' %>>
         <label for="F">F</label>
     
     <br>
