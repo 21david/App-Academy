@@ -1,10 +1,23 @@
 <form action="<%=cats_url%>" method="POST">
-    <label>Name:
-        <input type="text" name="@cat.name">
+    <label>Name:</label>
+    <input type="text" name="@cat.name">
+    <br>
+    <br>
+        
         <input type="radio" name="sex" value="M">
         <label for="M">M</label>
         <input type="radio" name="sex" value="F">
         <label for="F">F</label>
-        
+    
+    <br>
+    <br>
+    <label for="color">Choose A Color</label>
+
+    <%= select_tag(:color, options_for_select(COLORS)) %>
+
+    <label>Enter a Birth
+        <input type="date" max="<%= (Date.now).to_s %>">
     </label>
+        
+    
 </form>
