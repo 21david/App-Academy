@@ -1,43 +1,43 @@
-class LikesController < ApllicationController
+class LikesController < ApplicationController
     def index
-        if params.has_key?(:user)
-            render json: Like.select("*").where(user_id: params[:id])
-        else
-            render json: Like.all
-        end
+        render json: Like.all
     end
-
 
     def create
-        @like = User.new(user_params)
+        @like = Like.new(like_params)
         
-        if @user.save
-            redirect_to user_url(@user)
+        if @like.save
+            redirect_to like_url(@like)
         else
-            render json: @user.error.full_messages, status: 422
+            render json: @like.error.full_messages, status: 422
         end
     end
 
-    def update
-        @user = User.find(params[:id])
-
-        if @user.update(user_params)
-            redirect_to user_url(@user)
-        else
-            render json: @user.error.full_messages, status: 422
-        end
+    def show
+        @like = Like.find(params[:id])
+        render json: @like
     end
 
-    def destroy
-        @user = User.find(params[:id])
+    # def update
+    #     @user = User.find(params[:id])
 
-        @user.destroy
-        redirect_to user_url(@user)
-    end
+    #     if @user.update(user_params)
+    #         redirect_to user_url(@user)
+    #     else
+    #         render json: @user.error.full_messages, status: 422
+    #     end
+    # end
+
+    # def destroy
+    #     @user = User.find(params[:id])
+
+    #     @user.destroy
+    #     redirect_to user_url(@user)
+    # end
 
     private
-    def user_params
-        params.require(:user).permit(:username)
+    def like_params
+        params.require(:like).permit(:user_id, :likeable_id, :likeable_type)
     end
     
 end

@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2021_07_23_014234) do
   create_table "likes", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "likeable_id", null: false
-    t.string "likeable_type", null: false
+    t.string "likeable_type", null: false  # value can be 'Artwork' or 'Comment'
     t.index ["likeable_id"], name: "index_likes_on_likeable_id"
     t.index ["user_id", "likeable_id"], name: "index_likes_on_user_id_and_likeable_id", unique: true
     t.index ["user_id"], name: "index_likes_on_user_id"

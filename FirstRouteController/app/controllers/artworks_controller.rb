@@ -27,11 +27,8 @@ class ArtworksController < ApplicationController
 
     def show
         @artwork = Artwork.find(params[:id])
-        # @artworks_shared = User.find(params[:artist_id]).artworks_shared_with_user
-        # p params[:id]
 
         render json: @artwork
-        # render json: @artworks_shared
     end
 
     def create

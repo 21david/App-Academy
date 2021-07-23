@@ -1,7 +1,7 @@
-class Like
-    belongs_to :comment,
-        foreign_key: :comment_id,
-        class_name: :Comment
+class Like < ApplicationRecord
+    # belongs_to :comment,
+    #     foreign_key: :comment_id,
+    #     class_name: :Comment
 
     # belongs_to :artwork,
     #     foreign_key: :artwork_id,
