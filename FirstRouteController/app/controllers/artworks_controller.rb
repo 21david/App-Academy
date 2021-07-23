@@ -1,24 +1,29 @@
 class ArtworksController < ApplicationController
     def index
-        p params
         if params.has_key?(:user_id)
             # index of nested resource
-            # @artworks = Artwork.joins(artist_id: params[:user_id])
-            @artworks = Artwork.find_by_sql("
-            SELECT artworks.id, title, image_url, artist_id FROM artworks JOIN artwork_shares ON artwork_id = artworks.id WHERE viewer_id = #{params[:user_id]} UNION SELECT * FROM artworks WHERE artist_id = #{params[:user_id]}")
-            
-
-            # User.joins(:artworks_shared_with_user).where('users.id = ?', params[:artist_id]).group('users.id')
-
-            
-
-            p 'nested'
-            p params
 
             # combine artworks of user with artworks shared with user
+            @artworks = Artwork.find_by_sql(<<-SQL)
+                SELECT artworks.id, title, image_url, artist_id 
+                FROM artworks 
+                JOIN artwork_shares ON artwork_id = artworks.id 
+                WHERE viewer_id = #{params[:user_id]}
+
+                UNION 
+
+                SELECT * 
+                FROM artworks 
+                WHERE artist_id = #{params[:user_id]}             
+            SQL
+            # side note: couldn't figure out how to use ? or a symbol like :user_id 
+            # in the heredoc with the arguments at the top
+            
+            # p 'nested'
+
         else
             # index of top-level resource
-            p 'not nested'
+            # p 'not nested'
             @artworks = Artwork.all
         end
 
