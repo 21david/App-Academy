@@ -10,13 +10,21 @@
         <label for="F">F</label>
     
     <br>
+
     <br>
     <label for="color">Choose A Color</label>
-
-    <%= select_tag(:color, options_for_select(COLORS)) %>
+    <%= select_tag(:color, options_for_select(COLORS)) %> 
+    <br>
 
     <label>Enter a Birth
-        <input type="date" max="<%= (Date.now).to_s %>">
+        <input type="date" max="<%= DateTime.now.to_s[0..9] %>">
+    </label>
+
+    <br>
+
+    <label>Description
+        <textarea cols="20" rows=="10">   </textarea> 
+
     </label>
         
     
