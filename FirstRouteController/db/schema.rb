@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_22_201108) do
+ActiveRecord::Schema.define(version: 2021_07_23_014234) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,12 +41,10 @@ ActiveRecord::Schema.define(version: 2021_07_22_201108) do
 
   create_table "likes", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.integer "comment_id"
-    t.integer "artwork_id"
-    t.index ["artwork_id"], name: "index_likes_on_artwork_id"
-    t.index ["comment_id"], name: "index_likes_on_comment_id"
-    t.index ["user_id", "artwork_id"], name: "index_likes_on_user_id_and_artwork_id", unique: true
-    t.index ["user_id", "comment_id"], name: "index_likes_on_user_id_and_comment_id", unique: true
+    t.integer "likeable_id", null: false
+    t.string "likeable_type", null: false
+    t.index ["likeable_id"], name: "index_likes_on_likeable_id"
+    t.index ["user_id", "likeable_id"], name: "index_likes_on_user_id_and_likeable_id", unique: true
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
