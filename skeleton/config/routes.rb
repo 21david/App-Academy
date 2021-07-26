@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
   # should be singular for semantics
   # denies wildcard routes
-  root to: redirect('/cats')
+
+  root to: redirect('/cats')  # causes 'localhost:3000' to redirect to 'localhost:3000/cats'
 end
