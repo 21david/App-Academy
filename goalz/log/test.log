@@ -893,3 +893,609 @@ Processing by SessionsController#new as HTML
   Rendered sessions/new.html.erb within layouts/application (162.0ms)
 Completed 500 Internal Server Error in 166ms (ActiveRecord: 0.0ms)
   [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:17:07 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 682ms (Views: 677.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:17:08 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2021-07-28 16:17:08 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (3.6ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "password_digest", "session_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2021-07-28 20:17:08.957159"], ["updated_at", "2021-07-28 20:17:08.957159"], ["email", "john@gmail.com"], ["password_digest", "$2a$12$IzLFKnQIJLzZhHIevzyoFegQ6MjJH11yoQ6WPlAPdITku8OxA78oa"], ["session_token", "dyQM0_hC5HWAXJisWYI-uw"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/sessions/new
+Completed 302 Found in 460ms (ActiveRecord: 20.4ms)
+Started GET "/sessions/new" for 127.0.0.1 at 2021-07-28 16:17:08 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2021-07-28 16:17:08 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:20:19 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 251ms (Views: 244.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:20:19 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2021-07-28 16:20:19 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "password_digest", "session_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2021-07-28 20:20:20.037878"], ["updated_at", "2021-07-28 20:20:20.037878"], ["email", "john@gmail.com"], ["password_digest", "$2a$12$eOvAZJuWC8XqI34cqjTspO1xwfJbBBjhdktjOLymLokCTT1ltaUFu"], ["session_token", "CaZInQvRcHaNvs7N1lx9Tg"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/sessions/new
+Completed 302 Found in 345ms (ActiveRecord: 19.0ms)
+Started GET "/sessions/new" for 127.0.0.1 at 2021-07-28 16:20:20 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2021-07-28 16:20:20 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:27:45 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 138ms (Views: 133.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:27:45 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2021-07-28 16:27:45 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "password_digest", "session_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2021-07-28 20:27:45.635577"], ["updated_at", "2021-07-28 20:27:45.635577"], ["email", "john@gmail.com"], ["password_digest", "$2a$12$SIs8jSybEcrlg51mKLxEAOFJ5ptPPWJLWgZguEJR36Hri5jNc8DlW"], ["session_token", "vUZTiPn-BYkFuS31aWwfEw"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/sessions/new
+Completed 302 Found in 307ms (ActiveRecord: 6.0ms)
+Started GET "/sessions/new" for 127.0.0.1 at 2021-07-28 16:27:45 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:29:07 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 137ms (Views: 132.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:29:07 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2021-07-28 16:29:07 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "password_digest", "session_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2021-07-28 20:29:07.753110"], ["updated_at", "2021-07-28 20:29:07.753110"], ["email", "john@gmail.com"], ["password_digest", "$2a$12$Lxum7ire81OamIbtWpNaYe5vb8tTKb1aO9ow7hmWX4FCuW56bjtCS"], ["session_token", "CZy7Vlf1wW3HSAGQrT_YyQ"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/sessions/new
+Completed 302 Found in 310ms (ActiveRecord: 7.0ms)
+Started GET "/sessions/new" for 127.0.0.1 at 2021-07-28 16:29:07 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:36:49 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 136ms (Views: 130.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:36:49 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2021-07-28 16:36:49 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "password_digest", "session_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2021-07-28 20:36:49.660322"], ["updated_at", "2021-07-28 20:36:49.660322"], ["email", "john@gmail.com"], ["password_digest", "$2a$12$USjRg2GGRpGFRPC/chONS.7oSqQxIMYvB9wux07psIpF21DLg3k6y"], ["session_token", "bU25Bc-hzdNovxfLNtc3bA"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/sessions/new
+Completed 302 Found in 308ms (ActiveRecord: 5.8ms)
+Started GET "/sessions/new" for 127.0.0.1 at 2021-07-28 16:36:49 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2021-07-28 16:36:49 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:37:58 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 350ms (Views: 344.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:37:59 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2021-07-28 16:37:59 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (4.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "password_digest", "session_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2021-07-28 20:37:59.589710"], ["updated_at", "2021-07-28 20:37:59.589710"], ["email", "john@gmail.com"], ["password_digest", "$2a$12$8UmUGnUyhM45l./3a.27T.Q925zS/OhHaKhdtyi3ptTw1YsNobHvq"], ["session_token", "wvPdiZrpTEGE_fR-SIIHjg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/sessions/new
+Completed 302 Found in 358ms (ActiveRecord: 13.5ms)
+Started GET "/sessions/new" for 127.0.0.1 at 2021-07-28 16:37:59 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2021-07-28 16:37:59 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:43:50 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 162ms (Views: 158.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:43:51 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2021-07-28 16:43:51 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "password_digest", "session_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2021-07-28 20:43:51.406748"], ["updated_at", "2021-07-28 20:43:51.406748"], ["email", "john@gmail.com"], ["password_digest", "$2a$12$8m0S4jYHwQpZo3FD2lkHG.q1mUB4tc0iOSrP93qK.ik0hG3jS8ZX2"], ["session_token", "jVlp33H6pUl3QeYyS35DeA"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/sessions/new
+Completed 302 Found in 307ms (ActiveRecord: 7.0ms)
+Started GET "/sessions/new" for 127.0.0.1 at 2021-07-28 16:43:51 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2021-07-28 16:43:51 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:45:50 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 162ms (Views: 155.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:45:50 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2021-07-28 16:45:50 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "password_digest", "session_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2021-07-28 20:45:51.109562"], ["updated_at", "2021-07-28 20:45:51.109562"], ["email", "john@gmail.com"], ["password_digest", "$2a$12$g8M6dyzHMX4LOoLKgQTzXeR65Le3RDn95KH76wVXvbzgyj9FgTGPG"], ["session_token", "YayyzaRwg_Dmr1JgFuE7Mw"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 331ms (ActiveRecord: 5.9ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:46:31 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 139ms (Views: 133.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:46:31 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2021-07-28 16:46:31 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "password_digest", "session_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2021-07-28 20:46:31.559512"], ["updated_at", "2021-07-28 20:46:31.559512"], ["email", "john@gmail.com"], ["password_digest", "$2a$12$Q2Pq/zldpBKcROqcWOL/4OPTuMeI2MiCdCwpRib4P3zUP7scy.17G"], ["session_token", "5xKRIAeus_-QmRERmFX2YA"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 312ms (ActiveRecord: 5.4ms)
+Started GET "/session/new" for 127.0.0.1 at 2021-07-28 16:46:31 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Started GET "/session/new" for 127.0.0.1 at 2021-07-28 16:46:31 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:48:07 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 138ms (Views: 133.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:48:07 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2021-07-28 16:48:07 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "password_digest", "session_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2021-07-28 20:48:07.545400"], ["updated_at", "2021-07-28 20:48:07.545400"], ["email", "john@gmail.com"], ["password_digest", "$2a$12$UPupBEGssnREsoG6Hro3b.99Fy.e1Qd/8L2Y3IY7T.txmjDqHTnUu"], ["session_token", "4PQpEhnCpvTrBbYDe9HUaA"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 308ms (ActiveRecord: 5.3ms)
+Started GET "/session/new" for 127.0.0.1 at 2021-07-28 16:48:07 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/session/new" for 127.0.0.1 at 2021-07-28 16:48:07 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:52:03 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 166ms (Views: 161.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:52:03 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2021-07-28 16:52:03 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "password_digest", "session_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2021-07-28 20:52:03.588301"], ["updated_at", "2021-07-28 20:52:03.588301"], ["email", "john@gmail.com"], ["password_digest", "$2a$12$DQvAlHqUgow3dYmIk.vAb.bV7ZUwSssX4Rq3OEs3STzIpWfDkEdSW"], ["session_token", "xuWK62TRlycp4KnomrYTHw"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 318ms (ActiveRecord: 5.5ms)
+Started GET "/session/new" for 127.0.0.1 at 2021-07-28 16:52:03 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (37.0ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/session/new" for 127.0.0.1 at 2021-07-28 16:52:03 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (50.4ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:52:17 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 162ms (Views: 157.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:52:18 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2021-07-28 16:52:18 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "password_digest", "session_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2021-07-28 20:52:18.399308"], ["updated_at", "2021-07-28 20:52:18.399308"], ["email", "john@gmail.com"], ["password_digest", "$2a$12$FSpY2.y4a2nOhG9nRIcAauq44PEspsIlwPXeXgb3L.kcfnkeTtT6e"], ["session_token", "sXk8Tsa_4iz7Ai-kFN3Xbw"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 307ms (ActiveRecord: 6.4ms)
+Started GET "/session/new" for 127.0.0.1 at 2021-07-28 16:52:18 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/session/new" for 127.0.0.1 at 2021-07-28 16:52:18 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+Started POST "/session" for 127.0.0.1 at 2021-07-28 16:52:18 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@gmail.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 8ms (Views: 2.5ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:57:29 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 143ms (Views: 138.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:57:29 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2021-07-28 16:57:29 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "password_digest", "session_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2021-07-28 20:57:29.866866"], ["updated_at", "2021-07-28 20:57:29.866866"], ["email", "john@gmail.com"], ["password_digest", "$2a$12$pl7vxDhvm3tD8RDbW5.GUefDgsmp4MwvwGBbEunzP3B2.JJTEnAv6"], ["session_token", "wjavgqKHoiHhOO0cQESgZQ"]]
+  [1m[35m (0.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 309ms (ActiveRecord: 6.7ms)
+Started GET "/session/new" for 127.0.0.1 at 2021-07-28 16:57:29 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/session/new" for 127.0.0.1 at 2021-07-28 16:57:29 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+Started POST "/session" for 127.0.0.1 at 2021-07-28 16:57:29 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@gmail.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 3.2ms | ActiveRecord: 1.3ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:58:55 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 139ms (Views: 133.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:58:55 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2021-07-28 16:58:55 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "password_digest", "session_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2021-07-28 20:58:55.703785"], ["updated_at", "2021-07-28 20:58:55.703785"], ["email", "john@gmail.com"], ["password_digest", "$2a$12$hFv8iELucCmBDgk.st1zseJ/FFel4ZjPpTWjtHnW3idqsEFjE5kEi"], ["session_token", "Lwz-A_YUI6pUaJFmOogL7A"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 322ms (ActiveRecord: 6.1ms)
+Started GET "/session/new" for 127.0.0.1 at 2021-07-28 16:58:55 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/session/new" for 127.0.0.1 at 2021-07-28 16:58:55 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+Started POST "/session" for 127.0.0.1 at 2021-07-28 16:58:55 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@gmail.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 8ms (Views: 4.2ms | ActiveRecord: 0.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:59:15 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 148ms (Views: 143.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 16:59:16 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2021-07-28 16:59:16 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "password_digest", "session_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2021-07-28 20:59:16.378411"], ["updated_at", "2021-07-28 20:59:16.378411"], ["email", "john@gmail.com"], ["password_digest", "$2a$12$aRvlj33TUO/SOvPSNObNd.hayZZtM8lENK9/PCmjYLxZUT9QWKDbG"], ["session_token", "43MAioRf6gQz3Lvhl7RKwA"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 315ms (ActiveRecord: 7.6ms)
+Started GET "/session/new" for 127.0.0.1 at 2021-07-28 16:59:16 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/session/new" for 127.0.0.1 at 2021-07-28 16:59:16 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started POST "/session" for 127.0.0.1 at 2021-07-28 16:59:16 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@gmail.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 0.8ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 17:01:59 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 200ms (Views: 192.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 17:01:59 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2021-07-28 17:01:59 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "password_digest", "session_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2021-07-28 21:01:59.625082"], ["updated_at", "2021-07-28 21:01:59.625082"], ["email", "john@gmail.com"], ["password_digest", "$2a$12$J.Crl4TY0Sf6iMlCUpEVJ.gsmDwzT3oOPrSa3MoqNDxTsPBCBes7q"], ["session_token", "jADjUEOyt5IebFCggxMHBQ"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 305ms (ActiveRecord: 6.0ms)
+Started GET "/session/new" for 127.0.0.1 at 2021-07-28 17:01:59 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 17:04:21 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 194ms (Views: 188.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/new" for 127.0.0.1 at 2021-07-28 17:04:21 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2021-07-28 17:04:21 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"email"=>"john@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "password_digest", "session_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2021-07-28 21:04:22.154974"], ["updated_at", "2021-07-28 21:04:22.154974"], ["email", "john@gmail.com"], ["password_digest", "$2a$12$RtuIgdp0YYgi7BZ50/7X/uQ22nwT6mxQ2.WxlDKmSYVODvcNcMQl2"], ["session_token", "7EzyaoH8C0WuW-0pDAjV8A"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/session/new
+Completed 302 Found in 309ms (ActiveRecord: 6.7ms)
+Started GET "/session/new" for 127.0.0.1 at 2021-07-28 17:04:22 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "password_digest", "session_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2021-07-28 21:04:22.466621"], ["updated_at", "2021-07-28 21:04:22.466621"], ["email", "john@gmail.com"], ["password_digest", "$2a$12$KG0nJBCemU.iKbz4JsyXJeQlFRi3vWm69d50n2iVRxE2eW.Z7WYUW"], ["session_token", "XX9D2rhrZg9-aAdn3VxleQ"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/users/26" for 127.0.0.1 at 2021-07-28 17:04:22 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 9ms (Views: 4.3ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m

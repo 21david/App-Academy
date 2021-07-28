@@ -22,10 +22,19 @@ feature 'the signup process' do
 end
 
 feature 'logging in' do
-  scenario 'shows username on the homepage after login' do
-    visit new_session_url
-    expect(page).to have_content 'john@gmail.com'
-  end
+    # before(:each) do
+    #     visit new_session_url
+    #     fill_in 'user[email]', with: 'john@gmail.com'
+    #     fill_in 'user[password]', with: 'password123'
+    #     click_on 'Log In'
+    # end
+    
+    scenario 'shows username on the homepage after login' do
+        User.create(email:'john@gmail.com', password: 'password123')
+        # User.last.email = 'john@gmail.com'
+        visit user_url(User.last)
+        expect(page).to have_content 'john@gmail.com'
+    end
 end
 
 feature 'logging out' do
