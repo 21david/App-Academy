@@ -93,4 +93,12 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+
+end
+
+def log_in_user(user)
+  visit new_session_url
+  fill_in('Email:', with: "#{user.email}")
+  fill_in('Password:', with: "password123")
+  click_button('Log In')
 end

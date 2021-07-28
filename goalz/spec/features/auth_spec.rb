@@ -31,14 +31,20 @@ feature 'logging in' do
     
     scenario 'shows username on the homepage after login' do
         User.create(email:'john@gmail.com', password: 'password123')
-        # User.last.email = 'john@gmail.com'
         visit user_url(User.last)
         expect(page).to have_content 'john@gmail.com'
     end
 end
 
 feature 'logging out' do
-  scenario 'begins with a logged out state'
+  scenario 'begins with a logged out state' do
+    User.create(email:'john@gmail.com', password: 'password123')
+    log_in_user(User.last)
+    logout
+    # ApplicationController.login(User.last)
+    # ApplicationController.logout!
+    expect(page).to have_content('New user')
+  end
 
   scenario 'doesn\'t show username on the homepage after logout'
 
