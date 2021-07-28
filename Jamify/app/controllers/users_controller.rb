@@ -3,7 +3,8 @@ class UsersController < ApplicationController
     # methods to allow new users to sign up
 
     def index
-
+        @users = User.all
+        render :index
     end
 
 
@@ -21,7 +22,9 @@ class UsersController < ApplicationController
     end
 
     def create
-        @new_user = User.new(user_params)
+        p 'UsersController#create'
+        @new_user = User.new(email: params[:user][:email])
+        @new_user.password = params[:user][:password]
 
         if @new_user.save
             # if it had valid params
@@ -37,6 +40,6 @@ class UsersController < ApplicationController
 
     private
     def user_params
-        require(:user).permit(:email, :password)
+        params.require(:user).permit(:email, :password)
     end
 end
