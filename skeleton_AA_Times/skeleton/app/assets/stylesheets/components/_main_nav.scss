@@ -2,11 +2,13 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
+  padding: 5px;
 }
 
 .left-nav > ul,
 .right-nav > ul {
   display: flex;
+  align-items: center;
 }
 
 .left-nav {
@@ -14,6 +16,9 @@
   > ul {
     > li {
       margin: 10px;
+      font-family: $serif;
+      font-size: 15px;
+      text-transform: uppercase;
     }
   }
 
@@ -25,18 +30,16 @@
 .right-nav {
 
   > ul {
-    > #subscribe-now, #log-in {
+    > li {
       margin: 10px;
-      padding: 10px;
-      background-color: green;
-      border-radius: 5px;
-      color: white;
-      font-weight: bold;
+      font-family: $serif;
+      font-size: 15px;
+      text-transform: uppercase;
     }
 
     > li:last-of-type {
-      margin: 10px;
-      padding: 10px;
+      // margin: 10px;
+      // padding: 10px;
     }
   }
   
@@ -47,5 +50,6 @@
 
 .left-nav > ul > li:hover,
 .right-nav > ul > li:last-of-type:hover {
+  background-color: $lightest-gray;
 
 }
