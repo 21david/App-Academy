@@ -7,6 +7,7 @@ class User < ApplicationRecord
         foreign_key: :moderator_id,
         class_name: :Sub
 
+
     after_initialize :ensure_session_token
 
     attr_reader :password
