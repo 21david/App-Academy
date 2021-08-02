@@ -1,4 +1,5 @@
 require 'active_support'
+require 'active_support/inflector'
 require 'active_support/core_ext'
 require 'erb'
 require_relative './session'
@@ -31,7 +32,7 @@ class ControllerBase
   # Populate the response with content.
   # Set the response's content type to the given type.
   # Raise an error if the developer tries to double render.
-  def render_content(content, content_type = "text/html")
+  def render_content(content, content_type)
     if already_built_response?
       raise "Cannot render twice"
     else
@@ -45,7 +46,12 @@ class ControllerBase
   # pass the rendered html to render_content
   def render(template_name)
     # template_name is show
-    File.read(template_name)
+    dir_path = File.dirname(__FILE__)
+    # template = "views/#{controller_name.underscore}/#{template_name}.html.erb"
+    template = File.join("#{dir_path}/..", "views", "#{self.class.name.underscore}", "#{template_name}.html.erb")
+    template_code = File.read(template)
+    content = ERB.new(template_code).result(binding)
+    render_content(content, 'text/html')
   end
 
   # method exposing a `Session` object
