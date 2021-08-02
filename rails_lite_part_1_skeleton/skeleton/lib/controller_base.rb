@@ -44,6 +44,7 @@ class ControllerBase
   # use ERB and binding to evaluate templates
   # pass the rendered html to render_content
   def render(template_name)
+    File.read(template_name)
   end
 
   # method exposing a `Session` object
