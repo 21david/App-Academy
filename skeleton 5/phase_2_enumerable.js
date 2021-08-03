@@ -32,5 +32,5 @@ Array.prototype.myReduce = function(callback, initialValue) {
     return accum;
 }
 
-const array = [1, 2, 3, 4];
-console.log(array.myReduce(function(el1, el2) { return el1 * el2 }, 4));
+// const array = [1, 2, 3, 4];
+// console.log(array.myReduce(function(el1, el2) { return el1 * el2 }, 4));
