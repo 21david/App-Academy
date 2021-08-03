@@ -119,16 +119,40 @@ function merge(arr1, arr2) {
     const merged = [];
     while(arr1.length !== 0 && arr2.length !== 0) {
         if (arr1[0] < arr2[0]) {
-            merged.push(arr1.shift)
+            merged.push(arr1.shift())
         }
         else {
-            merged.push(arr2.shift)
+            merged.push(arr2.shift())
         }
     }
-
+    while(arr1.length){
+        merged.push(arr1.shift())
+    }
+    while(arr2.length){
+        merged.push(arr2.shift())
+    }
     return merged;
 }
 
+// const array4 = [81, 49, 30, 55, 13, 9, 21, -4, 33, 24];
+// console.log(mergeSort(array4));
 
-const array4 = [81, 49, 30, 55, 13, 9, 21, -4, 33, 24];
-console.log(mergeSort(array4));
+function subsets(arr){
+    const subsets=[];
+    for(let i = 0;i<2**arr.length;i++){
+        const bs1= (i).toString(2);
+        const bs2 = bs1.padStart(arr.length, '0');
+        const subset=[];
+        for(let j=0;j<arr.length;j++){
+            let a = bs2.charAt(j);
+            if (a==="1"){
+                subset.push(arr[j]);
+            }
+        }
+        subsets.push(subset);
+    }
+    return subsets
+}
+
+// arr3=["a","b","c","d"];
+// console.log(subsets(arr3));
