@@ -53,5 +53,43 @@ function fibonacci(n) {
 // console.log(fibonacci(15));
 
 function deepDup(arr) {
-    
+    const dup = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] instanceof Array) {
+            dup.push(deepDup(arr[i]));
+        } else {
+            dup.push(arr[i]);
+        }
+    }
+    return dup
 }
+
+// array3=[1,2,[[3,4],5],6];
+// arr1 = deepDup(array3);
+// array3[0]=2;
+// console.log(arr1)
+// console.log(array3)
+
+
+function bsearch(arr,target){
+    if (arr.length===0){
+        return -1;
+    }
+    const mid = arr.length/2;
+    if(arr[mid]===target){
+        return mid;
+    }
+    else if(arr[mid]<target){
+        let results = bsearch(arr.slice(mid+1),target);
+        if (results < 0){
+            return -1;
+        } else{
+            return mid + 1 + results;
+        }
+    } else{
+        return bsearch(arr.slice(0,mid),target);
+    }
+}
+
+arr=[1,2,3,4,5,6,7,8];
+console.log(bsearch(arr,5));
