@@ -88,8 +88,8 @@ Board.prototype.isOccupied = function (pos) {
   const r = pos[0];
   const c = pos[1];
 
-  // return this.grid[r][c] instanceof Piece;
-  return !!this.grid[r][c]
+  return this.grid[r][c] instanceof Piece;
+  // return !!this.grid[r][c]
 };
 
 /**
@@ -139,6 +139,24 @@ Board.prototype._positionsToFlipTwo = function(pos, color, dir, piecesToFlip=[])
  * color being flipped.
  */
 Board.prototype.validMove = function (pos, color) {
+  if (this.isOccupied(pos)){
+    return false;
+  }
+
+  let count = 0;
+  // debugger
+  for(let i = 0; i < Board.DIRS.length; i++) {
+    if (this._positionsToFlipTwo(pos, color, Board.DIRS[i]).length > 1) {
+      count++;
+    }
+  }
+  
+
+  if(this.isValidPos(pos) && count > 0) {
+    return true;
+  }
+
+  return false;
 };
 
 /**
