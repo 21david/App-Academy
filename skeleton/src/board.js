@@ -88,7 +88,8 @@ Board.prototype.isOccupied = function (pos) {
   const r = pos[0];
   const c = pos[1];
 
-  return this.grid[r][c] instanceof Piece;
+  // return this.grid[r][c] instanceof Piece;
+  return !!this.grid[r][c]
 };
 
 /**
@@ -105,20 +106,15 @@ Board.prototype.isOccupied = function (pos) {
  * Returns empty array if no pieces of the opposite color are found.
  */
 Board.prototype._positionsToFlip = function(pos, color, dir, piecesToFlip=[]) {
-  if (!piecesToFlip) {
-    piecesToFlip = [];
-  }
   if (!this.isValidPos(pos)) { // checks if its edge
     return piecesToFlip
   }
-  return this._positionsToFlipTwo(pos + dir, color, dir, piecesToFlip);
+  // debugger
+  let newPos = [pos[0] + dir[0], pos[1] + dir[1]];
+  return this._positionsToFlipTwo(newPos, color, dir, piecesToFlip);
 };
 
-Board.prototype._positionsToFlipTwo = function(pos, color, dir, piecesToFlip) {
-  if (!piecesToFlip) {
-    piecesToFlip = [];
-  }
-  
+Board.prototype._positionsToFlipTwo = function(pos, color, dir, piecesToFlip=[]) {
   if (!this.isValidPos(pos)) { // checks if its edge
     return piecesToFlip
   } else if (!this.isOccupied(pos)) { // checks if empty space
@@ -127,10 +123,13 @@ Board.prototype._positionsToFlipTwo = function(pos, color, dir, piecesToFlip) {
     if (this.isMine(pos, color)) { // checks if our piece
       return piecesToFlip
     } else {
-      piecesToFlip.push(this.getPiece(pos)); // pushes enemy pieces
+      piecesToFlip.push(pos); // pushes enemy pieces
     }
   }
-  piecesToFlip.push(this._positionsToFlipTwo(pos + dir, color, dir, piecesToFlip)); 
+
+  let newPos = [pos[0] + dir[0], pos[1] + dir[1]];
+  piecesToFlip = piecesToFlip.concat(this._positionsToFlipTwo(newPos, color, dir)); 
+
   return piecesToFlip;
 }
 
