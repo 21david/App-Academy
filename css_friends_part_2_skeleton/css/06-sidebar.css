@@ -1,8 +1,65 @@
 /* PHASE 0: Sidebar */
+
+/* Profile image */
 .profile-picture img {
     // width: 1000px;
     border: 1px solid black;
     border-radius: 5px;
-    margin-top: -50px;
-    z-index: 10;
+    margin-top: -50%;
+
+    position: relative;
+}
+
+#cat-img {
+    overflow: hidden;
+}
+
+.online {
+    position: absolute;
+    text-transform: uppercase;
+    color: white;
+    background-color: limegreen;
+    letter-spacing: 2px;
+    font-weight: bold;
+    border: 1px solid darkgreen;
+    padding-block: 3px;
+    padding-inline: 50px;
+    transform: rotate(-0.125turn) translateY(-10px) translateX(-56px);
+    // overflow: hidden;
+    z-index: 3;
+
+}
+
+
+
+/* Profile description */
+.profile-info h2 {
+    font-size: 23px;
+    font-weight: bold;
+    margin-block: 22px;
+}
+
+
+
+/* Profile navigation */
+.profile-nav {
+    margin-top: 20px;
+}
+
+.profile-nav li {
+    font-weight: bold;
+    border-top: 1px solid rgba(0,0,0,0.2);
+    // border-bottom: 1px solid rgba(0,0,0,0.2);
+
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 4px;
+}
+
+.profile-nav li:last-child {
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.profile-nav li:hover {
+    background-color: rgba(0,0,0,0.1);
 }
