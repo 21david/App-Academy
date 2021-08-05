@@ -51,9 +51,15 @@ function absurdBubbleSort(arr, sortCompletionCallback) {
   function outerBubbleSortLoop(madeAnySwaps) {
     // Begin an inner loop if you made any swaps. Otherwise, call
     // `sortCompletionCallback`.
+    if (madeAnySwaps) {
+      innerBubbleSortLoop(arr, 0, false, outerBubbleSortLoop)
+    }
+    else {
+      sortCompletionCallback(arr)
+    }
   }
-
   // Kick the first outer loop off, starting `madeAnySwaps` as true.
+  outerBubbleSortLoop(true);
 }
 
 absurdBubbleSort([3, 2, 1], function(arr) {
@@ -61,6 +67,6 @@ absurdBubbleSort([3, 2, 1], function(arr) {
   reader.close();
 });
 
-askIfGreaterThan(43, 20, (x) => {
-  console.log(x)
-});
+// askIfGreaterThan(43, 20, (x) => {
+//   console.log(x)
+// });
