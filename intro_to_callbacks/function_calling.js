@@ -92,7 +92,15 @@ Function.prototype.myDebounce = function(interval) {
     return () => {
         if (canRunAgain) {
             // reset timer
+            canRunAgain = false;
+            function setCanRunAgain() {
+                canRunAgain = true;
+            } 
+            setTimeout(setCanRunAgain, interval);
             this();
+        }
+        else {
+            // reset timer
         }
     }
 }
