@@ -10,7 +10,15 @@ function askIfGreaterThan(el1, el2, callback) {
   // Prompt user to tell us whether el1 > el2; pass true back to the
   // callback if true; else false.
   reader.question(`Is ${el1} greater than ${el2}?`, response => {
-      
+      if(el1 > el2 && response === "yes") {
+        callback(true)
+      }
+      else if(el1 <= el2 && response === "no") {
+        callback(true)
+      }
+      else {
+        callback(false)
+      }
   })
 }
 
@@ -19,6 +27,15 @@ function innerBubbleSortLoop(arr, i, madeAnySwaps, outerBubbleSortLoop) {
   // Do an "async loop":
   // 1. If (i == arr.length - 1), call outerBubbleSortLoop, letting it
   //    know whether any swap was made.
+  if (i == arr.length - 1) {
+    outerBubbleSortLoop(madeAnySwaps)
+  }
+  else {
+    let swap = askIfGreaterThan(arr[i], arr[i+1], (x) => {return x})
+    if(swap) {
+      [arr[i], arr[i+1]] = [arr[i+1], arr[i]];
+    }
+  }
   // 2. Else, use `askIfGreaterThan` to compare `arr[i]` and `arr[i +
   //    1]`. Swap if necessary. Call `innerBubbleSortLoop` again to
   //    continue the inner loop. You'll want to increment i for the
@@ -40,4 +57,8 @@ function absurdBubbleSort(arr, sortCompletionCallback) {
 absurdBubbleSort([3, 2, 1], function(arr) {
   console.log("Sorted array: " + JSON.stringify(arr));
   reader.close();
+});
+
+askIfGreaterThan(43, 20, (x) => {
+  console.log(x)
 });
