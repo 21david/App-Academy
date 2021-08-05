@@ -7,11 +7,18 @@ class Clock {
     this.minutes = date.getMinutes();
     this.seconds = date.getSeconds();
     // 3. Call printTime.
-    this.printTime();
+    // this.printTime();
     // 4. Schedule the tick at 1 second intervals.
-    while (true){
-        setTimeout(this._tick.bind(this), 1000);
-    }
+    // let i = 0;
+    
+    setInterval(this._tick.bind(this), 1000)
+
+    // while (i < 10) {
+    //     this._tick();
+        
+    //     i++;
+    // }
+    
   }
 
   printTime() {
@@ -25,6 +32,7 @@ class Clock {
     // 2. Call printTime.
     this.seconds += 1;
     this.printTime();
+    // setTimeout(this.printTime.bind(this), 1000);
   }
 }
 
