@@ -21,10 +21,14 @@ function sum2(){
 
 // console.log(sum2(1, 345, 5, 2, 12));
 
-Function.prototype.myBind = function(context) {
+Function.prototype.myBind = function() {
     const thisContext = this;
+    const argums = arguments;
+    console.log(argums);
     return function () {
-        return thisContext.apply(context);
+        const argums2 = arguments;
+        console.log(argums2);
+        return thisContext;
     };
 }
 
@@ -48,7 +52,7 @@ class Dog {
 const markov = new Cat("Markov");
 const pavlov = new Dog("Pavlov");
 
-markov.says("meow", "Ned");
+// markov.says("meow", "Ned");
 // Markov says meow to Ned!
 // true
 
@@ -57,18 +61,24 @@ markov.says.myBind(pavlov, "meow", "Kush")();
 // Pavlov says meow to Kush!
 // true
 
+console.log("--------------------");
+
 // no bind time args (other than context), call time args are "meow" and "a tree"
 markov.says.myBind(pavlov)("meow", "a tree");
 // Pavlov says meow to a tree!
 // true
+
+console.log("--------------------");
 
 // bind time arg is "meow", call time arg is "Markov"
 markov.says.myBind(pavlov, "meow")("Markov");
 // Pavlov says meow to Markov!
 // true
 
+console.log("--------------------");
+
 // no bind time args (other than context), call time args are "meow" and "me"
 const notMarkovSays = markov.says.myBind(pavlov);
-notMarkovSays("meow", "me");
+// notMarkovSays("meow", "me");
 // Pavlov says meow to me!
 // true
