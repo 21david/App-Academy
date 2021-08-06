@@ -21,14 +21,17 @@ function sum2(){
 
 // console.log(sum2(1, 345, 5, 2, 12));
 
-Function.prototype.myBind = function() {
+Function.prototype.myBind = function(context, ...args1) {
     const thisContext = this;
-    const argums = arguments;
-    console.log(argums);
-    return function () {
-        const argums2 = arguments;
-        console.log(argums2);
-        return thisContext;
+    // const argums = arguments;
+    // console.log(argums);
+    return function (...args2) {
+        // const argums2 = arguments;
+        // console.log(argums2);
+        let bigArr = args1.concat(args2)
+        // console.log(bigArr);
+        return thisContext.apply(context, bigArr);
+        // return thisContext.call(context, ...bigArr);
     };
 }
 
@@ -79,6 +82,6 @@ console.log("--------------------");
 
 // no bind time args (other than context), call time args are "meow" and "me"
 const notMarkovSays = markov.says.myBind(pavlov);
-// notMarkovSays("meow", "me");
+notMarkovSays("meow", "me");
 // Pavlov says meow to me!
 // true
