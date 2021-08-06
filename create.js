@@ -1,9 +1,9 @@
-Function.prototype.inherits = function (parent) {
-    var Surrogate = function () { };
-    Surrogate.prototype = parent.prototype;
-    this.prototype = new Surrogate();
-    this.prototype.constructor = this;
-}
+// Function.prototype.inherits = function (parent) {
+//     var Surrogate = function () { };
+//     Surrogate.prototype = parent.prototype;
+//     this.prototype = new Surrogate();
+//     this.prototype.constructor = this;
+// }
 
 function MovingObject() { }
 MovingObject.prototype.getSpeed = function () {
@@ -11,14 +11,16 @@ MovingObject.prototype.getSpeed = function () {
 }
 
 function Ship() { }
-Ship.inherits(MovingObject);
+Ship.prototype = Object.create(MovingObject.prototype);
+Ship.prototype.constructor = Ship;
 Ship.prototype.isSinking = function () {
     console.log(false);
 }
 
 
 function Asteroid() { }
-Asteroid.inherits(MovingObject);
+Asteroid.prototype = Object.create(MovingObject.prototype);
+Asteroid.prototype.constructor = Asteroid;
 Asteroid.prototype.hitShip = function () {
     console.log('Asteroid hits ship.')
 }
@@ -45,4 +47,4 @@ const m = new MovingObject();
 
 // m.hitShip();
 // s.hitShip();
-// a.hitShip();
+a.hitShip();
