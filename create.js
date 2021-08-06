@@ -1,25 +1,25 @@
-Function.prototype.inherits = function(parent) {
-    var Surrogate = function () {};
+Function.prototype.inherits = function (parent) {
+    var Surrogate = function () { };
     Surrogate.prototype = parent.prototype;
     this.prototype = new Surrogate();
     this.prototype.constructor = this;
 }
 
 function MovingObject() { }
-MovingObject.prototype.getSpeed = function() {
+MovingObject.prototype.getSpeed = function () {
     console.log('Current speed is 2.');
 }
 
 function Ship() { }
 Ship.inherits(MovingObject);
-Ship.prototype.isSinking = function() {
+Ship.prototype.isSinking = function () {
     console.log(false);
 }
 
 
 function Asteroid() { }
 Asteroid.inherits(MovingObject);
-Asteroid.prototype.hitShip = function() {
+Asteroid.prototype.hitShip = function () {
     console.log('Asteroid hits ship.')
 }
 
