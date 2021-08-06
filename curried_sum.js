@@ -48,13 +48,13 @@ Function.prototype.curry = function(numArgs) {
     const currentArgs = [];
 
     return function _thisFunction(num) {
+        currentArgs.push(num);
         if (numArgs === currentArgs.length) {
             console.log(currentArgs);
-            return thisFunction(...currentArgs);
+            // return thisFunction(...currentArgs);
+            return thisFunction.apply(this, currentArgs);
         } 
         else {
-            
-            currentArgs.push(num);
             return _thisFunction;
         }
     }
