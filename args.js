@@ -52,36 +52,59 @@ class Dog {
     }
 }
 
-const markov = new Cat("Markov");
-const pavlov = new Dog("Pavlov");
+const mimo = new Cat("Mimo");
+const astro = new Dog("Astro");
 
-// markov.says("meow", "Ned");
-// Markov says meow to Ned!
+console.log("1. --------------------");
+
+mimo.says("meow", "David");
+// Mimo says meow to David!
 // true
 
-// bind time args are "meow" and "Kush", no call time args
-markov.says.myBind(pavlov, "meow", "Kush")();
-// Pavlov says meow to Kush!
+console.log("2. --------------------");
+
+console.log(`bind time args are "meow" and "Kush", no call time args`);
+mimo.says.myBind(astro, "meow", "Kush")();
+
+console.log(`bind time args are "woof" and "Laura", no call time args`);
+const astroAndLaura = mimo.says.bind(astro, "woof", "Laura"); // "woof" and "Laura" are bound to this function
+// Astro says meow to Kush!
 // true
 
-console.log("--------------------");
+astroAndLaura();
+// Astro says woof to Laura!
 
-// no bind time args (other than context), call time args are "meow" and "a tree"
-markov.says.myBind(pavlov)("meow", "a tree");
-// Pavlov says meow to a tree!
+console.log("3. --------------------");
+
+console.log(`no bind time args (other than context), call time args are "meow" and "a tree"`);
+mimo.says.myBind(astro)("meow", "a tree");
+// Astro says meow to a tree!
 // true
 
-console.log("--------------------");
+console.log(`no bind time args (other than context), call time args are [variable] and [variable]`);
+const astroSaysAnythingToAnyone = mimo.says.bind(astro);
+astroSaysAnythingToAnyone("grrrrr", "a stranger");
+astroSaysAnythingToAnyone("mmhh mhhh", "David");
+astroSaysAnythingToAnyone("WOOF", "a cat");
 
-// bind time arg is "meow", call time arg is "Markov"
-markov.says.myBind(pavlov, "meow")("Markov");
-// Pavlov says meow to Markov!
+console.log("4. --------------------");
+
+console.log('bind time arg is "WOOF", call time arg is "Mimo"');
+mimo.says.myBind(astro, "WOOF")("Mimo");
+// Astro says meow to mimo!
 // true
 
-console.log("--------------------");
+console.log('bind time arg is "WOOF", call time arg is [variable]');
+const astroSaysWOOFToAnyone = mimo.says.bind(astro, "WOOF");
+astroSaysWOOFToAnyone("someone walking by");
+astroSaysWOOFToAnyone("another dog");
+astroSaysWOOFToAnyone("a cat");
 
-// no bind time args (other than context), call time args are "meow" and "me"
-const notMarkovSays = markov.says.myBind(pavlov);
-notMarkovSays("meow", "me");
-// Pavlov says meow to me!
+console.log("5. --------------------");
+
+// no bind time args (other than context), call time args are [variable] and [variable]
+// (same as #3 above)
+const astroSays = mimo.says.myBind(astro);
+astroSays("yooo", "a stranger");
+// Astro says yooo to a stranger!
 // true
