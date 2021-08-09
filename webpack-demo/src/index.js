@@ -3,6 +3,12 @@ console.log("Webpack is working!");
 const MovingObject = require("./moving_object.js");
 window.MovingObject = MovingObject;
 
+const Util = require("./util.js");
+window.Util = Util;
+
+const Asteroid = require("./asteroid.js");
+window.Asteroid = Asteroid;
+
 window.addEventListener('DOMContentLoad', () => {
     const canv = document.getElementById("game-canvas")
     canv.width = 500
