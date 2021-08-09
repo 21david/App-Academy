@@ -34,6 +34,7 @@ Game.prototype.draw = function(ctx){
     var c = document.getElementById("game-canvas");
     var ctx = c.getContext("2d");
     ctx.clearRect(0, 0, DIM_X, DIM_Y); 
+    this.addAsteroids();
     asteroids.forEach(ele => ele.draw());
 }
 

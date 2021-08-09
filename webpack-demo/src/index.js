@@ -12,6 +12,9 @@ window.Asteroid = Asteroid;
 const Game = require("./game.js");
 window.Game = Game;
 
+const GameView = require("./game_view.js");
+window.GameView = GameView;
+
 window.addEventListener('DOMContentLoad', () => {
     const canv = document.getElementById("game-canvas")
     canv.width = 500
@@ -25,5 +28,10 @@ window.addEventListener('DOMContentLoad', () => {
     });
     mo.draw();
 
-
+    const game = new Game();
+    debugger;
+    const gameView = new GameView(game, ctx);
+    debugger;
+    gameView.start();
 });
+
