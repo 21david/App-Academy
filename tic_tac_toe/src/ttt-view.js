@@ -9,7 +9,10 @@ class View {
     const ul = document.createElement('ul');
     for (let i = 0; i < 3; i++) {
       for (let j = 0; j < 3; j++) {
-        ul.appendChild(document.createElement('li'));
+        let li = document.createElement('li')
+        li.dataset.row = i
+        li.dataset.column = j
+        ul.appendChild(li);
       }
     }
     this.el.appendChild(ul);
@@ -17,7 +20,9 @@ class View {
   
   bindEvents() {}
 
-  handleClick(e) {}
+  handleClick(e) {
+
+  }
 
   makeMove(square) {}
 
