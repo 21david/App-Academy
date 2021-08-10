@@ -31,6 +31,9 @@ class View {
 
   makeMove(square) {
     // square.innerText = this.game.currentPlayer;
+    // const symbol = document.createElement('p')
+    // symbol.innerText = this.game.currentPlayer;
+    // square.appendChild(symbol)
     square.classList.toggle(this.game.currentPlayer)
     let row = square.dataset.row;
     let column = square.dataset.column;
