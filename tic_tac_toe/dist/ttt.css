@@ -12,6 +12,7 @@ li {
     background: gray;
     width: 160px;
     height: 165px;
+    position: relative;
 }
 
 li:hover {
@@ -20,7 +21,26 @@ li:hover {
 
 .x{
     background: white;
-    
+    // font-size: 160px;
+    // justify-content: center;
+    // width: 100%;
+    // display: block;
+    // margin-left: auto;
+    // margin-right: auto;
+    // padding: 30px;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+}
+
+.x::after {
+    content: "X";
+    font-size: 160px;
+    width: 100%;
+    color: red;
+    display: block;
+    align-items: center;
+    // padding: auto;
 }
 
 .o{

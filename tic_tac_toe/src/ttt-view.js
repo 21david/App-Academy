@@ -30,7 +30,7 @@ class View {
   }
 
   makeMove(square) {
-    square.innerText = this.game.currentPlayer;
+    // square.innerText = this.game.currentPlayer;
     square.classList.toggle(this.game.currentPlayer)
     let row = square.dataset.row;
     let column = square.dataset.column;
