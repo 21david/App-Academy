@@ -10,21 +10,30 @@ class View {
     for (let i = 0; i < 3; i++) {
       for (let j = 0; j < 3; j++) {
         let li = document.createElement('li')
-        li.dataset.row = i
-        li.dataset.column = j
+        li.dataset.row = i;
+        li.dataset.column = j;
         ul.appendChild(li);
       }
     }
     this.el.appendChild(ul);
   }
   
-  bindEvents() {}
-
-  handleClick(e) {
-
+  bindEvents() {
+    this.el.addEventListener('click', this.handleClick);
   }
 
-  makeMove(square) {}
+  handleClick(e) {
+    if (e.target.tagName === "LI") {
+      this.makeMove(e.target);
+    }
+  }
+
+  makeMove(square) {
+    let row = square.dataset.row;
+    let column = square.dataset.column;
+    pos = [parseInt(row), parseInt(column)];
+    this.game.playMove(pos);
+  }
 
 }
 

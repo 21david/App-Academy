@@ -25,7 +25,7 @@ eval("const View = __webpack_require__(/*! ./ttt-view */ \"./src/ttt-view.js\");
   \*************************/
 /***/ ((module) => {
 
-eval("class View {\r\n  constructor(game, el) {\r\n    this.game = game;\r\n    this.el = el;\r\n    this.setupBoard();\r\n  }\r\n\r\n  setupBoard() {\r\n    const ul = document.createElement('ul');\r\n    for (let i = 0; i < 3; i++) {\r\n      for (let j = 0; j < 3; j++) {\r\n        ul.appendChild(document.createElement('li'));\r\n      }\r\n    }\r\n    this.el.appendChild(ul);\r\n  }\r\n  \r\n  bindEvents() {}\r\n\r\n  handleClick(e) {}\r\n\r\n  makeMove(square) {}\r\n\r\n}\r\n\r\nmodule.exports = View;\r\n\n\n//# sourceURL=webpack:///./src/ttt-view.js?");
+eval("class View {\r\n  constructor(game, el) {\r\n    this.game = game;\r\n    this.el = el;\r\n    this.setupBoard();\r\n  }\r\n\r\n  setupBoard() {\r\n    const ul = document.createElement('ul');\r\n    for (let i = 0; i < 3; i++) {\r\n      for (let j = 0; j < 3; j++) {\r\n        let li = document.createElement('li')\r\n        li.dataset.row = i\r\n        li.dataset.column = j\r\n        ul.appendChild(li);\r\n      }\r\n    }\r\n    this.el.appendChild(ul);\r\n  }\r\n  \r\n  bindEvents() {}\r\n\r\n  handleClick(e) {\r\n\r\n  }\r\n\r\n  makeMove(square) {}\r\n\r\n}\r\n\r\nmodule.exports = View;\r\n\n\n//# sourceURL=webpack:///./src/ttt-view.js?");
 
 /***/ }),
 
