@@ -3,6 +3,7 @@ class View {
     this.game = game;
     this.el = el;
     this.setupBoard();
+    this.bindEvents();
   }
 
   setupBoard() {
@@ -19,7 +20,7 @@ class View {
   }
   
   bindEvents() {
-    this.el.addEventListener('click', this.handleClick);
+    this.el.addEventListener('click', this.handleClick.bind(this));
   }
 
   handleClick(e) {
@@ -29,9 +30,11 @@ class View {
   }
 
   makeMove(square) {
+    square.innerText = this.game.currentPlayer;
+    square.classList.toggle(this.game.currentPlayer)
     let row = square.dataset.row;
     let column = square.dataset.column;
-    pos = [parseInt(row), parseInt(column)];
+    let pos = [parseInt(row), parseInt(column)];
     this.game.playMove(pos);
   }
 
