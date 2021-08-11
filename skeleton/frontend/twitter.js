@@ -1,4 +1,7 @@
 const FollowToggle = require('./follow_toggle');
-function documentReadyCallBack(){
-    
-}
+
+$(() => { 
+    $('button.follow-toggle').each(function(index, btn) {
+        new FollowToggle(btn);
+    })
+})

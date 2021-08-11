@@ -1,16 +1,86 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./frontend/api_util.js":
+/*!******************************!*\
+  !*** ./frontend/api_util.js ***!
+  \******************************/
+/***/ ((module) => {
+
+const ApiUtil = {
+//     newGifAJAX: function() {
+//       // always explicitly return because it makes debugging easier
+//       // explicitly returning whatever is returned by the ajax method. (a promise)
+//       return $.ajax({
+//         method: 'GET',
+//         url: 'https://api.giphy.com/v1/gifs/random?api_key=9IfxO6R6fpEZMAdqdw66QUgQdPejVIAW&rating=G&tag=banana',
+//       });
+//     },
+//     saveGifAJAX: function(gifArg) { //expect gifArg to have keys of title and url
+//       return $.ajax({
+//         method: "POST",
+//         url: "/gifs",
+//         dataType: "JSON",
+//         data: {
+//           gif: gifArg
+//         }
+//       })
+//     },
+//     fetchSavedGifAJAX: function(titleArg) {
+//       return $.ajax({
+//         method: "GET",
+//         url: `/gifs/${titleArg}`,
+//         dataType: "JSON"
+//       })
+//     }
+    follow: function(userId){
+        return $.ajax({
+                    method: "POST",
+                    url: `/users/${userId}/follow`,
+                    dataType : "JSON",
+                    // data: {
+                    //     follow: {
+                    //         followee_id: this.user_id
+                    //     },
+                    //     followed: {"follower_Id"}
+                    // }
+        });
+    }
+   
+};
+  
+  module.exports = ApiUtil;
+
+/***/ }),
+
 /***/ "./frontend/follow_toggle.js":
 /*!***********************************!*\
   !*** ./frontend/follow_toggle.js ***!
   \***********************************/
-/***/ ((module) => {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-function FollowToggle($el) {
-    this.userId = $el.find("data-user-id");
-    this.followState = $el.find("data-initial-follow-state");
+const ApiUtil = __webpack_require__(/*! ./api_util.js */ "./frontend/api_util.js")
+
+function FollowToggle($el) { // $el is the button
+    // this.userId = $el.find("data-user-id");
+    // this.followState = $el.find("data-initial-follow-state");
+    this.userId = $el.data('user-id');
+    this.followState = $el.data('initial-follow-state');
     this.el = $el;
+    this.el.innerText = this.render();
+}
+
+FollowToggle.prototype.render = function() {
+    this.followState === 'followed' ? "Follow!" : "Unfollow!"
+}
+
+FollowToggle.prototype.handleClick = function(e) {
+    e.preventDefault();
+    if(this.render() === 'Unfollow!') {
+       ApiUtil.follow(this.userId).then();
+    } else {
+
+    }
 }
 
 module.exports = FollowToggle;
@@ -51,9 +121,13 @@ var __webpack_exports__ = {};
   !*** ./frontend/twitter.js ***!
   \*****************************/
 const FollowToggle = __webpack_require__(/*! ./follow_toggle */ "./frontend/follow_toggle.js");
-function documentReadyCallBack(){
-    
-}
+
+$(() => { 
+    $('button.follow-toggle').each(function(index, btn) {
+        new FollowToggle(btn);
+    })
+})
+
 })();
 
 /******/ })()
