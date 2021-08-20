@@ -29,14 +29,17 @@ class Clock extends React.Component {
 
     render() {
         return(
-            <div>
-                <div>
-                    <p>Time:</p>
-                    <p>Date:</p>
-                </div>
-                <div>
-                    <h1>{this.state.date.getHours()} {this.state.date.getMinutes()} {this.state.date.getSeconds()}</h1>
-                    <p>{this.state.date.toDateString()}</p>
+            <div class="outer">
+                <h1>Clock</h1>
+                <div class="inner">
+                    <div>
+                        <p>Time:</p>
+                        <p>Date:</p>
+                    </div>
+                    <div>
+                        <p>{this.state.date.getHours()} {this.state.date.getMinutes()} {this.state.date.getSeconds()}</p>
+                        <p>{this.state.date.toDateString()}</p>
+                    </div>
                 </div>
             </div>
         )

@@ -1,5 +1,6 @@
 import React from 'react';
 import Clock from './clock.jsx';
+import Tab from './Tab.jsx'
 
 class Main extends React.Component {
     constructor(props) {
@@ -8,7 +9,7 @@ class Main extends React.Component {
 
     render() {
         return (
-            <div><Clock/>test</div>
+            <div><Tab /></div>
         )
     }
 }
