@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="css/10-posts.css" type="text/css">
   <link rel="stylesheet" href="css/11-icons.css" type="text/css">
   <link rel="stylesheet" href="css/12-modal.css" type="text/css">
+  
 </head>
 <body>
 
@@ -38,6 +39,7 @@
         </li>
         <li><a href="#">Profile</a></li>
         <li><a href="#">Settings</a></li>
+        <li><a href="#" class="js-modal-open">Sign In</a></li>
       </ul>
 
     </nav>
@@ -232,5 +234,45 @@
 
   </footer>
 
+  <div class="modal-container">
+    
+
+    <div class="modal-screen js-modal-close">
+      &times
+    </div>
+
+    <div class="modal-form input">
+      <h1>Welcome</h1>
+      <p>Please sign in to continue</p>
+      <label for="">Email:
+        <input type="text">
+      </label>
+
+      <label for="">Password:
+        <input type="password">
+      </label>
+      
+    </div>
+
+    
+
+  </div>
+
+  <script src="./js/jquery.js"></script>
+  <script>
+    $(function(){
+    
+      $("body").on("click", ".js-modal-open", function(event){
+        event.preventDefault();
+        $(".modal-container").addClass("is-open");
+      });
+    
+      $("body").on("click", ".js-modal-close", function(event){
+        event.preventDefault();
+        $(".modal-container").removeClass("is-open");
+      });
+    
+    });
+    </script>
 </body>
 </html>
