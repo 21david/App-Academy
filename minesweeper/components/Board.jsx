@@ -1,4 +1,5 @@
 import React from 'react';
+import Tile from './Tile.jsx'
 
 class Board extends React.Component {
     constructor (props) {
