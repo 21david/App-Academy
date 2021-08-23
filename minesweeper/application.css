@@ -1,30 +1,55 @@
-body {
-    text-align: center;
-}
-
 .tile {
-    // display: inline-block;
+  
     height: 20px;
     width: 20px;
-
-    // font-size: 4px;
-
-    margin: 0;
 
     position: relative;
     
     border-style: outset;
     padding: 5px;
-    /* margin: -1px; */
+
     background-color: lightgray;
 }
 
 .row {
-    /* width: 500px; */
+  
     display: flex;
-    position: relative;
+    justify-content: center;
 }
 
 .explored {
     border-style: inset;
+}
+
+.minesweeper {
+    text-align: center;
+}
+
+.modal-screen {
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, .8);
+}
+
+.modal-text {
+    z-index: 3;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 25%;
+    background-color: white;
+    border-radius: 4px;
+    padding: 15px;
+    /* display: flex;
+    flex-direction: column */
+}
+
+.modal-text > p {
+    margin: 0px;
+    margin-bottom: 15px;
+    justify-content: space-between;
 }

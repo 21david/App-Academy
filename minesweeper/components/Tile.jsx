@@ -42,7 +42,6 @@ class Tile extends React.Component {
         }
 
         if (this.props.tile.bombed && this.props.tile.explored) {
-            debugger
             variable = "💣";
             klass = "bombed";
         }
