@@ -3,9 +3,15 @@ body {
 }
 
 .tile {
-    display: inline-block;
+    // display: inline-block;
     height: 20px;
     width: 20px;
+
+    // font-size: 4px;
+
+    margin: 0;
+
+    position: relative;
     
     border-style: outset;
     padding: 5px;
@@ -15,6 +21,8 @@ body {
 
 .row {
     /* width: 500px; */
+    display: flex;
+    position: relative;
 }
 
 .explored {

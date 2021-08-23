@@ -25,15 +25,19 @@ class Tile extends React.Component {
         let variable;
         let klass;
         // debugger
-        if(this.props.tile.explored && this.props.tile.adjacentBombCount() > 0) {
+        if(this.props.tile.explored ) {
             // debugger
-            variable = this.props.tile.adjacentBombCount();
+            if(this.props.tile.adjacentBombCount() > 0) {
+                variable = this.props.tile.adjacentBombCount();
+            } else {
+                variable = ' ';
+            }
             klass = "explored";
         } else if (this.props.tile.flagged) {
             variable = "🚩";
             klass = "flagged";
         }  else {
-            variable = ''
+            variable = ' '
             klass = "none";
         }
 
