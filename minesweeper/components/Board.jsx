@@ -14,8 +14,8 @@ class Board extends React.Component {
             <div>
                 {this.props.board.grid.map((row, index)=> {
                     // debugger
-                    return <div key={`${index} + ${row}`}>{row.map((tile, tileIndex) => {
-                        return <Tile key={`${tileIndex} + ${tile}`} tile={tile}  update={this.props.update}/>
+                    return <div className = "row" key={`${index} + ${row}`}>{row.map((tile, tileIndex) => {
+                        return <Tile key={`${tileIndex} + ${tile}`} tile={tile}  updateGame={this.props.updateGame}/>
                     })}</div>
                 })}
             </div>

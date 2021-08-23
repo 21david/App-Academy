@@ -1,0 +1,22 @@
+body {
+    text-align: center;
+}
+
+.tile {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    
+    border-style: outset;
+    padding: 5px;
+    /* margin: -1px; */
+    background-color: lightgray;
+}
+
+.row {
+    /* width: 500px; */
+}
+
+.explored {
+    border-style: inset;
+}

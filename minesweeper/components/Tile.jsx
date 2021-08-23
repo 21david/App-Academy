@@ -11,17 +11,41 @@ class Tile extends React.Component {
         // this.flagged = false;
         // this.flagged = false;
         // this.array = [false, false, false];
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(event) {
+        let flagging = event.altKey
+        // debugger
+        this.props.updateGame(this.props.tile, flagging)
     }
 
     render() {
+        // debugger
+        let variable;
+        let klass;
+        // debugger
+        if(this.props.tile.explored && this.props.tile.adjacentBombCount() > 0) {
+            // debugger
+            variable = this.props.tile.adjacentBombCount();
+            klass = "explored";
+        } else if (this.props.tile.flagged) {
+            variable = "🚩";
+            klass = "flagged";
+        }  else {
+            variable = ''
+            klass = "none";
+        }
+
+        if (this.props.tile.bombed && this.props.tile.explored) {
+            debugger
+            variable = "💣";
+            klass = "bombed";
+        }
+
+
         return (
-            {
-                debugger
-                // if(this.props.tile.explored && this.adjacentBombCount() > 1) {
-                //     return this.adjacentBombCount();
-                // }
-            }
-            'T'
+            <div onClick={this.handleClick} className={`tile ${klass}`} >{variable}</div>
         )
     }
 }
