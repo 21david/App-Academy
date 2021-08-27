@@ -5,8 +5,16 @@
 
 json.extract! @party, :name, :location
 
-json.guests do |guest| 
-    json.array! 
+json.guests do |blah| 
+
+    json.array! @party.guests do |guest|
+        json.name guest.name
+
+
+        # json.set! guest.name do 
+        #     json.array! guest.gifts, :title, :description
+        # end
+    end
 end
 
 # json.extract! @party, :name, :location
