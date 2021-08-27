@@ -1,8 +1,3 @@
-# json.set! @party.id do 
-#     json.extract! @party, :name, :location
-
-#     json.
-
 json.extract! @party, :name, :location
 
 json.guests do |blah| 
@@ -11,7 +6,7 @@ json.guests do |blah|
         json.name guest.name
         json.gifts guest.gifts, :title
         # json.array! guest.gifts, :title, :description
-
+        # Sip.all.includes(:author)
 
         # json.set! guest.name do 
         #     json.array! guest.gifts, :title, :description
@@ -19,7 +14,3 @@ json.guests do |blah|
     end
 end
 
-# json.extract! @party, :name, :location
-# debugger
-# json.array! party.guests, :name
-# json.party.guests.gifts
