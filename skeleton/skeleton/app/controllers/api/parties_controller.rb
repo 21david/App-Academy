@@ -5,7 +5,7 @@ class Api::PartiesController < ApplicationController
   end
 
   def show
-    @party = Party.find_by(id: params[:id]), include: :gifts
+    @party = Party.find_by(id: params[:id])#, include: :gifts
     render :show
   end
 end
