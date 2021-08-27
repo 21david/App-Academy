@@ -9,6 +9,8 @@ json.guests do |blah|
 
     json.array! @party.guests do |guest|
         json.name guest.name
+        json.gifts guest.gifts, :title
+        # json.array! guest.gifts, :title, :description
 
 
         # json.set! guest.name do 
