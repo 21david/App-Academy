@@ -1,0 +1,9 @@
+<h1>User's show page</h1>
+
+<!-- Show user's information -->
+<ul>
+    <li>Email: <%= @new_user.email %></li>
+    <li>Password hash: <%= @new_user.password_digest %></li>
+</ul>
+
+<% link_to "All users", users_url %>
