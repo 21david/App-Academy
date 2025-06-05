@@ -1,0 +1,64 @@
+ul {
+    display: flex;
+    width: 500px;
+    height: 500px;
+    flex-wrap: wrap;
+    list-style: none;
+
+}
+
+li {
+
+    border: 3px solid black;
+    background: gray;
+    width: 160px;
+    height: 165px;
+}
+
+li:hover {
+    background: yellow;
+}
+
+.x{
+    background: white;
+    display: flex;
+    /* // font-size: 160px; */
+    /* // justify-content: center; */
+    /* // width: 100%; */
+    /* // display: block;
+    // margin-left: auto;
+    // margin-right: auto;
+    // padding: 30px;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%; */
+    
+    
+}
+
+
+
+.x::after {
+    content: "X";
+    font-size: 160px;
+    width: 100%;
+    color: red;
+    display: block;
+    text-align: center;
+  
+   
+}
+.o::after {
+    content: "O";
+    font-size: 160px;
+    width: 100%;
+    color: green;
+    display: block;
+    text-align: center;
+ 
+   
+}
+
+.o{
+    background: white;
+}
