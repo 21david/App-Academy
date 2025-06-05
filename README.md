@@ -1,2 +1,2 @@
-# App Academy Homeworks
-Homework for each day that has homework assignments in the App Academy curriculum will be uploaded here.
+# App Academy
+All of the work I did during my 11 weeks at the App Academy bootcamp is found here.
