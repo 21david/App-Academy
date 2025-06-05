@@ -1,0 +1,49 @@
+/* PHASE 0: Sidebar */
+
+
+.content-sidebar img {
+    position: relative; bottom:120px;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.content-sidebar h1 {
+    position: relative; bottom: 100px;
+    padding-bottom: 20px;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.content-sidebar p {
+    font-size: 18px;
+    font-weight: 500;
+    position: relative; bottom: 100px;
+}
+
+.content-sidebar li {
+    font-size: 20px;
+    position: relative; bottom: 80px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bolder;
+    border-top: 1px solid #ccc;
+    color: #000;
+}
+
+.content-sidebar li:last-child {
+    border-bottom: 1px solid #ccc;
+}
+  
+.content-sidebar li:hover {
+    background: #eee;
+}
+
+
+
+
+
+
+
+
+
+
