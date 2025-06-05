@@ -1,0 +1,40 @@
+/* PHASE 0: Reset */
+
+html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+    box-sizing: inherit;
+    list-style-type: none;
+    // font-size: 100%;
+    // font: inherit;
+    // vertical-align: baseline;
+    background-color: rgb(77, 22, 22);
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+textarea,
+button {
+    -webkit-appearance: none; 
+}
+
+button,
+input[type="submit"] {
+    cursor: pointer;  
+}
