@@ -1,0 +1,54 @@
+Question 2
+
+Given the following table write all the `belongs_to` and `has_many` associations
+for models based on the below table (`User`, `Enrollment`, and `Course`)
+
+class User < ApplicationRecord
+    
+    has_many :enrollments,
+        primary_key: :id,
+        foreign_key: :student_id,
+        class_name: :Enrollment
+
+    has_many :courses_taught,
+        primary_key: :id,
+        foreign_key: :professor_id,
+        class_name: :Course,
+        optional: true
+
+end
+
+
+class Enrollment < ApplicationRecord
+    
+    belongs_to :course,
+        primary_key: :id,
+        foreign_key: :course_id,
+        class_name: :Course
+
+    belongs_to :student,
+        primary_key: :id,
+        foreign_key: :student_id,
+        class_name: :User
+end
+
+
+class Course < ApplicationRecord
+	
+    has_many :enrollments,
+        primary_key: :id,
+        foreign_key: :course_id,
+        class_name: :Enrollment
+
+    belongs_to :professor,
+        primary_key: :id,
+        foreign_key: :professor_id,
+        class_name: :User
+
+    belongs_to :prerequisite,
+        primary_key: :id,
+        foreign_key: :prereq_course_id,
+        class_name: :Course,
+        optional: true
+    
+end
