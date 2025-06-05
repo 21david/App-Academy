@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eee;
+}
+
+h1 {
+    font-size: 38px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+.ingredients-list {
+    list-style: square inside;
+}
+
+ol li {
+    list-style: georgian inside;
+}
+
+header > img {
+    width: 100px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Select radio buttons */
+input[type="radio"], 
+select,
+input[type="submit"] {
+    cursor: pointer;
+    outline: none;
+}
+
+/* all input elements that are the last element in whatever it's in */
+/* Submit button */
+input:last-child {
+    background-color: gold;
+}
+input:last-child:hover {
+    background-color: gold;
+    -webkit-filter: brightness(90%);
+}
+
+/* Directions list */
+ol li:nth-last-of-type(2n) {
+    background-color: lightgrey;
+}
+
+h2 + div.user_review {
+    border-top: 1px solid black;
+}
+
+
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    width: 30px;
+    height: 30px;
+    background-position: top left;
+    background-image: url(stars.png);
+
+    vertical-align: bottom;
+}
+
+input[type="radio"]:hover {
+    background-position: 0px 60px;
+}
+
+input[type="radio"]:checked {
+    background-position: 0px 30px;
+}
