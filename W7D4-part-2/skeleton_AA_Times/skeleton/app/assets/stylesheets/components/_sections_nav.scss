@@ -1,0 +1,14 @@
+div {
+    display: flex;
+    justify-content: center;
+}
+
+.section-links {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+}
+
+.section-links li {
+    margin: 0 10px;
+}
